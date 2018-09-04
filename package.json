@@ -11,7 +11,7 @@
     "babel-preset-react-app": "^3.1.2",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
-    "chalk": "1.1.3",
+    "chalk": "^1.1.3",
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
@@ -53,7 +53,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy": "gh-pages -b gh-pages -d build"
+    "deploy": "hash=`git rev-parse HEAD` && yarn build && gh-pages -b gh-pages -d build -m \"Build for $hash\""
   },
   "jest": {
     "collectCoverageFrom": [
