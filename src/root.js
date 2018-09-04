@@ -7,7 +7,7 @@ import Header from './components/header/Header'
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
-		<BrowserRouter>
+		<BrowserRouter basename="/musicami">
 			<div>
 				<Header />
 			</div>
