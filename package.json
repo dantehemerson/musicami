@@ -20,7 +20,8 @@
 	},
 	"scripts": {
 		"start": "webpack-dev-server",
-		"dev": "webpack-dev-server --content-base . --inline --hot"
+		"dev": "webpack-dev-server --content-base . --inline --hot",
+		"build": "webpack --bail",	
 	},
 	"author": "Dante Calderón <dantehemerson@gmail.com>",
 	"license": "MIT"
