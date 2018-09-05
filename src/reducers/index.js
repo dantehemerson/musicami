@@ -1,3 +1,4 @@
 import { combineReducers } from 'redux'
+import navigationHome from './navigationHomeReducer'
 
-export default combineReducers({})
+export default combineReducers({ ...navigationHome })
