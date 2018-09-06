@@ -1,26 +1,21 @@
 language: node_js
 node_js:
 - '8'
-
 cache:
   yarn: true
   directories:
   - node_modules
-
 before_install:
   - npm install -g yarn
-
 install:
-  -yarn
-
+  - yarn
 script:
   - yarn test
   - yarn build
-
 deploy:
   - provider: pages
-  skip_cleanup: true
-  local_dir: "${TRAVIS_BUILD_DIR}/build"
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+    skip_cleanup: true
+    local_dir: "${TRAVIS_BUILD_DIR}/build"
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
