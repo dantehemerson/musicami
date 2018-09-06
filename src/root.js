@@ -24,10 +24,14 @@ const Root = ({ store }) => (
 					<Col sm={12} md={12} lg={10}>
 						<Route exact path='/' component={ NavigationHome } />
 					</Col>					
+					<Col smHidden={ true } mdHidden={true} lg={2}>
+						<Sidebar />
+					</Col>
 				</Row>
 				<div className="page-bottom">
 					<Player />
 				</div>
+
 			</div>
 		</BrowserRouter>
 	</Provider>
