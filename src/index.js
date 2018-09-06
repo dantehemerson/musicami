@@ -17,4 +17,5 @@ const store = createStore(
 )
 
 ReactDOM.render(<Root store={ store } />, document.getElementById('root'))
+
 registerServiceWorker()
