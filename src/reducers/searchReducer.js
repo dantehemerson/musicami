@@ -1,6 +1,6 @@
 import { actionsType, searchStatus } from '../actions/searchActions'
 
-export default (state={videos:[], searchStatus: searchStatus.notSearching }, action) => {
+export function search(state={videos:[], searchStatus: searchStatus.notSearching }, action) {
 	switch(action.type) {
 		case actionsType.searchSuccess:
 			return { 
