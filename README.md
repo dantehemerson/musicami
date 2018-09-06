@@ -2,27 +2,28 @@
 
 A simple music player
 
-## Installation
-### Requirements
-* `yarn`
-* `nodejs`
+## Development
 
 ### Building dependencies
 ```bash
-$ yarn install
+yarn install
 ```
 
-## Building and Running
-### Build and Run
+### Starting Dev Server
 ```bash
-$ yarn start
-```
-### Build and Run with Automatic Refresh
-```bash
-$ yarn dev
+yarn start
 ```
 
 ### Building
 ```bash
-$ yarn build
+yarn build
+```
+
+### Running Tests
+```bash
+yarn test
+```
+### Deploying to `gh-pages`
+```bash
+yarn deploy
 ```
