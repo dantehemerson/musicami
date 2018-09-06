@@ -1,18 +1,6 @@
-const host = 'http://anyaudio.in'
+import getQueryString from './paramParser'
 
-function getQueryString(params) {
-	return Object
-		.keys(params)
-		.map(k => {
-			if(Array.isArray(params[k])) {
-				return params[k]
-					.map(val => `${encodeURIComponent(k)}[]=${encodeURIComponent(val)}`)
-					.join('&')
-			}
-			return `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`
-		})
-		.join('&')
-}
+const host = 'http://anyaudio.in'
 
 export default {
 	search: (query) => {
