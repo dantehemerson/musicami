@@ -79,7 +79,7 @@ typings/
 /coverage
 
 # production
-/build
+#/build #Trying solve TravisCI error github-pages
 
 # misc
 .DS_Store
