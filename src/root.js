@@ -9,6 +9,7 @@ import './static/css/root.css'
 // containers
 import Header from './containers/headerContainer'
 import NavigationHome from './containers/navigation/navigationHomeContainer'
+import NavigationSearch from './containers/navigation/navigationSearchContainer'
 import Player from './containers/playerContainer'
 import Sidebar from './containers/sideBarContainer'
 
@@ -22,6 +23,7 @@ const Root = ({ store }) => (
 				<Row className="page-middle">
 					<Col sm={12} md={12} lg={10}>
 						<Route exact path='/' component={ NavigationHome } />
+						<Route exact path='/search' component={ NavigationSearch }/>
 					</Col>					
 					<Col smHidden={ true } mdHidden={true} lg={2}>
 						<Sidebar />

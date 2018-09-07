@@ -5,14 +5,16 @@ export function search(state={videos:[], searchStatus: searchStatus.notSearching
 		case actionsType.searchSuccess:
 			return { 
 				...state, 
-				videos: action.videos,
-				searchStatus: searchStatus.searched
+				videos: action.videos.results,
+				searchStatus: searchStatus.searched,
+				numberResults: action.videos.metadata.count
 			}
 		case actionsType.searchInit:
 			return {
 				...state,
 				videos: [],
-				searchStatus: searchStatus.searching
+				searchStatus: searchStatus.searching,
+				numberResults: 0
 			}
 		default:
 			return state
