@@ -1,12 +1,12 @@
 import { actionsType, searchStatus } from '../actions/searchActions'
 
-const initializeState = {
+const initialState = {
 	videos:[], 
 	searchStatus: searchStatus.notSearching, 
 	numberResults: 0 
 }
 
-export function search(state = initializeState, action) {
+export function search(state = initialState, action) {
 	switch(action.type) {
 		case actionsType.searchSuccess:
 			return { 
