@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import NavigationSearch from '../../components/navigation/navigationSearch'
 
 import { searchInit, search } from '../../actions/searchActions'
+import { addVideo } from '../../actions/nowPlayingActions'
 
 function mapStateToProps(state) {	
 	return {
@@ -16,6 +17,7 @@ export default connect(
 	mapStateToProps,
 	{
 		initSearch: searchInit,
-		search: search
+		search: search,
+		addToNowPlaying: addVideo
 	}
 )(NavigationSearch)

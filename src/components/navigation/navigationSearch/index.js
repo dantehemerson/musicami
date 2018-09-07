@@ -42,9 +42,11 @@ export default class NavigationSearch extends React.Component {
    render() {
       return (
          <div className='container'>
-         	<h2>Search results for {this.query}</h2>
+         	<h2>Search results for { this.query }</h2>
             {this.getHeadline()}
-            <VideoCardListList videos={this.props.videos} />
+            <VideoCardListList 
+            	videos={ this.props.videos } 
+            	addToNowPlaying={ this.props.addToNowPlaying }/>
          </div>
       )
    }

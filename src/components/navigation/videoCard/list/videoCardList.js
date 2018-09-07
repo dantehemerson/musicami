@@ -5,6 +5,10 @@ import FontAwesome from 'react-fontawesome'
 import './static/css/videoCardList.css'
 
 export default class VideoCardList extends React.Component {
+	addToNowPlaying() {
+		this.props.addToNowPlaying(this.props.video)
+	}
+
   	render() {
    	return (
    	  <div className='video-card-list row'>   	    		        
@@ -24,7 +28,9 @@ export default class VideoCardList extends React.Component {
 	   	        	{this.props.video.views}
 	   	      </div>
    	    	</div>
-   	    	<FontAwesome name='plus'/>
+   	    	<FontAwesome 
+   	    		name='plus' 
+   	    		onClick={ this.addToNowPlaying.bind(this) } />
       	</div>
     	)
   	}
