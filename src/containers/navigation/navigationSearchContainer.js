@@ -4,8 +4,7 @@ import NavigationSearch from '../../components/navigation/navigationSearch'
 
 import { searchInit, search } from '../../actions/searchActions'
 
-function mapStateToProps(state) {
-	console.log(state)
+function mapStateToProps(state) {	
 	return {
 		videos: state.search.videos,
 		searchStatus: state.search.searchStatus,
@@ -17,6 +16,6 @@ export default connect(
 	mapStateToProps,
 	{
 		initSearch: searchInit,
-		search
+		search: search
 	}
 )(NavigationSearch)
