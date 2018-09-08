@@ -32,6 +32,8 @@ export default class NavigationSearch extends React.Component {
 		this.props.search(this.query)
 	}
 
+	
+
 	getHeadline() {
 		if(this.props.searchStatus === searchStatus.searching) {
 			return <span>Loading...</span>
