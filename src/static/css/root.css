@@ -12,5 +12,9 @@ body {
   min-height: calc(100vh - 100px);
 }
  .page-bottom {
-  height: 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding: 5px;
+  background-color: #faa;
 }
