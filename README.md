@@ -1,6 +1,8 @@
-# Musicami
+# :notes: Musicami
 
 A simple music player
+
+Enjoy live at https://dantehemerson.github.io/musicami/
 
 ## Development
 
