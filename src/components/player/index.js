@@ -38,6 +38,7 @@ export default class Player extends React.Component {
 						Audio not supported!!
 					</audio>
 					{ this.props.currentSong && this.props.currentSong.title }
+					<button onClick={this.props.playNext}>Next</button>
 				</div>
 			</div>
 		)
