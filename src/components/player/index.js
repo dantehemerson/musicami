@@ -26,8 +26,7 @@ export default class Player extends React.Component {
 
 	render() {
 		return (
-			<div>
-				Playing { this.props.currentSong && this.props.currentSong.title }...
+			<div>				
 				<div>
 					<audio 
 						id='audio-player' 
@@ -37,6 +36,7 @@ export default class Player extends React.Component {
 						preload='metadata'>
 						Audio not supported!!
 					</audio>
+					{ this.props.currentSong && this.props.currentSong.title }
 				</div>
 			</div>
 		)
