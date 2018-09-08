@@ -1,7 +1,6 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
-
 import './static/css/videoCardList.css'
 
 export default class VideoCardList extends React.Component {
