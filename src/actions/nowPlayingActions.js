@@ -1,3 +1,5 @@
+import api from '../utils/api'
+
 export const actionType = {
 	videoAdd: 'VIDEO_ADD',
 	videoRemove: 'VIDEO_REMOVE',
