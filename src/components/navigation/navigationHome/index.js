@@ -11,7 +11,8 @@ export default class NavigationHome extends React.Component {
 			<div className='container'>
 				<VideoCardGridList
 					playlists={this.props.playlists}
-					playSong={this.props.playSong} />
+					playSong={this.props.playSong}
+					addToNowPlaying={this.props.addToNowPlaying}/>
 			</div>
 		)
 	}

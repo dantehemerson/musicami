@@ -13,7 +13,8 @@ export default class VideoCardGridList extends React.Component {
 			   		<VideoCardGrid 
 			   			video={video} 
 			   			key={video.id} 
-			   			playSong={this.props.playSong}/>)}
+			   			playSong={this.props.playSong}
+			   			addToNowPlaying={this.props.addToNowPlaying}/>)}
 				</div>
 			</div>
 		)
