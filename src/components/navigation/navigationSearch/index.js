@@ -52,7 +52,7 @@ export default class NavigationSearch extends React.Component {
             <VideoCardListList 
             	videos={ this.props.videos } 
             	addToNowPlaying={ this.props.addToNowPlaying }
-            	playSong={this.props.playSong}
+            	playSong={ this.props.playSong }
             	 />
          </div>
       )

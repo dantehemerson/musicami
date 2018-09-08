@@ -13,7 +13,8 @@ export default class VideoCardListList extends React.Component {
         					<VideoCardList 
         						video={ video } 
         						key={ video.id }
-        						addToNowPlaying={ this.props.addToNowPlaying } />)
+        						addToNowPlaying={ this.props.addToNowPlaying } 
+                    playSong={ this.props.playSong }/>)
         		}
       	</div>
     	)
