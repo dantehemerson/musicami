@@ -9,11 +9,17 @@ export default {
 				.then(response => response.json().then(videos => resolve(videos)))
 		})
 	},
-	fetchStreamURL(streamURL) {
+	fetchStreamURL: (streamURL) => {
 		return new Promise((resolve, reject) => {			
 			fetch(host + streamURL)
 				.then(response => 
 					response.json().then(data => resolve(host + data.url)))
+		})
+	},
+	getSuggestions: (suggestUrl) => {
+		return new Promise((resolve, reject) => {
+			fetch(host + suggestUrl)
+				.then(response => response.json().then(data => resolve(data.results)))
 		})
 	}
 }
