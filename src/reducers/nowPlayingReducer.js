@@ -3,6 +3,7 @@ import { removeDuplicateVideos } from '../utils/removeDuplicates'
 
 const initialState = { 
 	videos: [],
+	suggestedVideos: [],
 	dispatchNext: false
 }
 
@@ -31,6 +32,11 @@ export function nowPlaying(state = initialState, action) {
 			return {
 				...state,
 				dispatchNext: false
+			}
+		case actionType.getSuggestions:
+			return {
+				...state,
+				suggestedVideos: action.suggestedVideos
 			}
 
 		default:
