@@ -3,6 +3,7 @@ import React from 'react'
 import { searchStatus } from '../../../actions/searchActions'
 import VideoCardListList from '../../../components/navigation/videoCard/list/videoCardListList'
 
+
 export default class NavigationSearch extends React.Component {
 	constructor(props) {
 		super(props)
