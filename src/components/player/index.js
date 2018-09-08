@@ -9,6 +9,12 @@ export default class Player extends React.Component {
 		}
 	}
 
+	componentDidMount() {
+		let audioElement = document.getElementById('audio-player')
+		audioElement.addEventListener('ended', e => {
+			this.props.playNext()
+		})
+	}
 	componentWillReceiveProps(newProps) {
 		console.log(newProps.currentSong.stream_url)
 		api.fetchStreamURL(newProps.currentSong.stream_url)
