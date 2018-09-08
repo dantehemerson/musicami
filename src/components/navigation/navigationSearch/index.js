@@ -32,7 +32,9 @@ export default class NavigationSearch extends React.Component {
 		this.props.search(this.query)
 	}
 
-	
+	playSong(video) {
+		this.props.playSong(video)
+	}
 
 	getHeadline() {
 		if(this.props.searchStatus === searchStatus.searching) {
@@ -49,7 +51,9 @@ export default class NavigationSearch extends React.Component {
             {this.getHeadline()}
             <VideoCardListList 
             	videos={ this.props.videos } 
-            	addToNowPlaying={ this.props.addToNowPlaying }/>
+            	addToNowPlaying={ this.props.addToNowPlaying }
+            	playSong={this.props.playSong}
+            	 />
          </div>
       )
    }
