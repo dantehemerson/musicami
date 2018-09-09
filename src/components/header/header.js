@@ -6,8 +6,9 @@ import './static/css/header.css'
 
 export default class Header extends React.Component {
    componentDidMount() {
-      document.getElementById('search-input')
-         .addEventListener('keyup', event => {
+      let searchElement = document.getElementById('search-input')
+      searchElement && 
+         searchElement.addEventListener('keyup', event => {
             event.preventDefault()
             if(event.keyCode === 13) {
                this.search()
@@ -16,10 +17,13 @@ export default class Header extends React.Component {
    }
 
    search() {
-      const query = document.getElementById('search-input').value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
+      const searchElement = document.getElementById('search-input')
+
+      const query = searchElement.value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
       if(query.length === 0) {
         return
       }      
+      searchElement.blur()
       this.props.history.push('/search/' + query)
     }
 
