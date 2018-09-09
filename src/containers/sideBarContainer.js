@@ -10,7 +10,8 @@ function mapStateToProps(state) {
 		prevSongs: state.nowPlaying.previousSongs,
 		suggestedSongs: state.nowPlaying.suggestedSongs,
 		dispatchNext: state.nowPlaying.dispatchNext,
-    	currentSong: state.player.currentSong
+    	currentSong: state.player.currentSong,
+    	playlistActive: state.player.playlistActive
 	}
 }
 

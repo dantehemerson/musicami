@@ -5,7 +5,8 @@ import 'plyr/dist/plyr.css'
 import './css/player.css'
 import nextIcon from './img/icon-next.svg'
 import pauseIcon from './img/pause-icon.svg'
-//import queueIcon from './img/queue-icon.svg'
+import queueIcon from './img/queue-icon.svg'
+import queueActiveIcon from './img/queue-icon-active.svg'
 import volumeIcon from './img/volume-icon.svg'
 import volumeOffIcon from './img/volume-off-icon.svg'
 import playIcon from './img/play-icon.svg'
@@ -63,6 +64,11 @@ export default class Player extends React.Component {
 		      "<progress class='plyr__volume--display' max='10' value='0' role='presentation'></progress>",
 		      "</span>",
 		      "</div>",
+		      "<button id='queue-toggle' class='player-queue' type='button' data-plyr='queue'>",
+		      `<img class="queue-active" src=${queueActiveIcon} alt='queue icon'/>`,
+		      `<img class="queue-default" src=${queueIcon} alt='queue icon'/>`,
+		      "<span class='plyr__sr-only'>Queue</span>",
+		      "</button>",
 		      "</div>"].join("")
 		});
 
@@ -81,6 +87,17 @@ export default class Player extends React.Component {
 				this.props.playNext()
 			}
 		}
+
+		let queueToggleElement = document.querySelector('#queue-toggle')
+		queueToggleElement.addEventListener('click', evt => {
+			if(this.props.playlistActive) {
+				queueToggleElement.classList.remove('active')
+				this.props.deactivatePlaylist()
+			} else {
+				queueToggleElement.classList.add('active')
+				this.props.activatePlaylist()
+			}
+		})
 	}
 
 	handleKeyboardEvents(e) {
