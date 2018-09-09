@@ -6,7 +6,7 @@ body {
   flex-flow: column;
 }
  .page-top {
-  height: 100px;
+
 }
  .page-middle {
   min-height: calc(100vh - 100px);
