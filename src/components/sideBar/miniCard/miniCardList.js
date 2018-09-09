@@ -14,6 +14,7 @@ export default class MiniCardList extends React.Component {
                      key={song.id}/>
          }      
          return <MiniCard 
+                  name={this.props.name}
                   song={song} 
                   playSong={this.props.playSong} 
                   addToNowPlaying={this.props.addToNowPlaying}
