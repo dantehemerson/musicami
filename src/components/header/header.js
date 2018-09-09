@@ -46,12 +46,6 @@ export default class Header extends React.Component {
                            <input className="uk-search-input border-radius40" id='search-input' type="text" placeholder="Search" />
                         </form>
                      </div>
-                     <div className="uk-navbar-right uk-margin-large-left">
-                        <a className="uk-visible@m border-radius40 uk-button uk-button-default uk-button-large app-download-btn">
-                           <img width="20px" src={AndroidIcon} alt="Android Icon"/>
-                           <span className="uk-margin-small-left"> Download APP</span>
-                        </a>
-                     </div>
                   </nav>
                </div>
            </header>
