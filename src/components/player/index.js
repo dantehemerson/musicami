@@ -2,6 +2,7 @@ import React from 'react'
 import plyr from 'plyr'
 
 import 'plyr/dist/plyr.css'
+import './css/player.css'
 
 import api from '../../utils/api'
 import notify from '../../utils/notification'
@@ -22,6 +23,18 @@ export default class Player extends React.Component {
 		plyr.setup({
 		    html: [
 		      "<div class='plyr__controls'>",
+		      	"<button type='button' data-plyr='play'>",
+		      	"<svg><use xlink:href='#plyr-play'></use></svg>",
+		      	"<span class='plyr__sr-only'>Play</span>",
+		      	"</button>",
+		      	"<button type='button' data-plyr='pause'>",
+		      	"<svg><use xlink:href='#plyr-pause'></use></svg>",
+		      	"<span class='plyr__sr-only'>Pause</span>",
+		      	"</button>",
+		      	"<button type='button' id='next-btn'>",
+		      	"<svg><use xlink:href='#plyr-fast-forward'></use></svg>",
+		      	"<span class='plyr__sr-only'>Forward {seektime} secs</span>",
+		      	"</button>",
 		        "<span class='plyr__progress'>",
 		          "<label for='seek{id}' class='plyr__sr-only'>Seek</label>",
 		          "<input id='seek{id}' class='plyr__progress--seek' type='range' min='0' max='100' step='0.1' value='0' data-plyr='seek'>",
@@ -30,19 +43,7 @@ export default class Player extends React.Component {
 		            "<span>0</span>% buffered",
 		          "</progress>",
 		          "<span class='plyr__tooltip'>00:00</span>",
-		        "</span>",
-		        "<button type='button' data-plyr='play'>",
-		          "<svg><use xlink:href='#plyr-play'></use></svg>",
-		          "<span class='plyr__sr-only'>Play</span>",
-		        "</button>",
-		        "<button type='button' data-plyr='pause'>",
-		          "<svg><use xlink:href='#plyr-pause'></use></svg>",
-		          "<span class='plyr__sr-only'>Pause</span>",
-		        "</button>",
-		        "<button type='button' id='next-btn'>",
-		          "<svg><use xlink:href='#plyr-fast-forward'></use></svg>",
-		          "<span class='plyr__sr-only'>Forward {seektime} secs</span>",
-		        "</button>",
+		        "</span>",		        
 		        "<span class='plyr__time'>",
 		          "<span class='plyr__sr-only'>Current time</span>",
 		          "<span class='plyr__time--current'>00:00</span>",
@@ -131,8 +132,19 @@ export default class Player extends React.Component {
 
 	render() {
 		return (
-			<div>				
-				<div style={{display: this.state.streamURL ? 'block' : 'none'}}>
+			<div className="player-wrapper" style={{display: this.state.streamURL ? 'flex' : 'none'}}>
+				<div className="player-meta">			
+				  <div className="player-album-art uk-margin-right">
+				    <img className="" src={this.props.currentSong && this.props.currentSong.thumb} alt="Album Art"/>
+				  </div>
+				  <div className="player-name-artist">
+				    <div className="player-name">{this.props.currentSong && this.props.currentSong.title}</div>
+				    <div className="player-artist">{this.props.currentSong && this.props.currentSong.uploader}</div>
+				    {console.log(this.props.currentSong)}
+				  </div>
+				  {/*{this.props.currentSong && this.props.currentSong.title}*/}
+				</div>
+				<div className="player">
 					<audio 
 						id='audio-player' 
 						ref={ref => this.audioElement = ref}
@@ -143,7 +155,6 @@ export default class Player extends React.Component {
 						Audio not supported!!
 					</audio>
 				</div>
-				{ this.props.currentSong && this.props.currentSong.title }
 			</div>
 		)
 	}
