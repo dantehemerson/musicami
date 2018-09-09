@@ -47,10 +47,17 @@ export default class Player extends React.Component {
 		            	audioElement.volume = audioElement.volume >= 0.1 ? audioElement.volume - 0.1 : 0;
 		            	e.preventDefault()
 		            	break;
-		          	case 78:
+		          	case 78: // n : next song
 		            	this.props.playNext();
 		            	e.preventDefault()
 		            	break;
+		            case 70:  // f => activate search box input
+		               let searchElement = document.getElementById('search-input');
+		               if (searchElement) {
+		                  searchElement.focus();
+		               }
+		                  e.preventDefault();
+		               break;
 		          	default:		            
 		        	}
 		     	}
