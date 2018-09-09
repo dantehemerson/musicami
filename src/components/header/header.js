@@ -1,19 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import Logo from './static/img/logo.png'
 import './static/css/header.css'
 
-export default class Header extends React.Component {
+class Header extends React.Component {
    componentDidMount() {
       let searchElement = document.getElementById('search-input')
-      searchElement && 
+      if(searchElement) {
          searchElement.addEventListener('keyup', event => {
             event.preventDefault()
             if(event.keyCode === 13) {
                this.search()
             }
          })
+      } 
    }
 
    search() {
@@ -34,7 +36,7 @@ export default class Header extends React.Component {
                <div className="uk-container">
                   <nav className="uk-navbar uk-navbar-container uk-navbar-transparent">
                      <div className="uk-navbar-left">                       
-                        <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt=""/></Link>
+                        <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt="Musicami"></img></Link>
                      </div>
                      <div className="anyaudio-search-container uk-navbar-left uk-margin-medium-left uk-margin-medium-right uk-nav-center-sm">
                         <form className="uk-search uk-search-default anyaudio-search" action="javascript:void(0)" 
@@ -52,3 +54,9 @@ export default class Header extends React.Component {
     	)
   }
 }
+
+Header.propTypes = {
+  history: PropTypes.object.isRequired
+}
+
+export default Header
