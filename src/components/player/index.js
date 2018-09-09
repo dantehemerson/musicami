@@ -39,7 +39,7 @@ export default class Player extends React.Component {
 						src={this.state.streamURL} 
 						autoPlay={true}
 						controls={true}
-						preload='metadata'>
+						preload='auto'>
 						Audio not supported!!
 					</audio>
 					{ this.props.currentSong && this.props.currentSong.title }
