@@ -19,12 +19,12 @@ const Root = ({ store }) => (
 				<div className="page-top">
 					<Header />
 				</div>
-				<div className="page-middle">
-					<div>
+				<div className="page-middle uk-flex">
+					<div className="content-container uk-container">
 						<Route exact path='/' component={ NavigationHome } />
 						<Route exact path='/search/:q' component={ NavigationSearch }/>
 					</div>					
-					<div>
+					<div className="sidebar-container">
 						<Sidebar />
 					</div>
 				</div>

@@ -8,7 +8,7 @@ export default class NavigationHome extends React.Component {
 
 	render() {
 		return (
-			<div className='container'>
+			<div>
 				<VideoCardGridList
 					playlists={this.props.playlists}
 					playSong={this.props.playSong}
