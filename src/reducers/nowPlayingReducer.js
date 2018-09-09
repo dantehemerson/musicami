@@ -14,9 +14,11 @@ export function nowPlaying(state = initialState, action) {
 		case actionType.songAdd:
 			let songs = state.nextSongs.slice(0)
 			songs.push(action.song)
+			let prev = state.previousSongs.filter(item => !songInArray(item, songs))
 			return {
 				...state,
-				nextSongs: removeDuplicateSongs(songs)
+				nextSongs: removeDuplicateSongs(songs),
+				previousSongs: prev
 			}
 
 		case actionType.songRemove:
@@ -31,7 +33,7 @@ export function nowPlaying(state = initialState, action) {
 				dispatchNext: true
 			}
 		case actionType.playedNext:
-			let prev = state.previousSongs.slice(0)
+			prev = state.previousSongs.slice(0)
 			prev.push(action.song)
 			console.log('Previous', prev)
 			prev = removeDuplicateSongs(prev)
