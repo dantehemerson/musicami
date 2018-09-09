@@ -46,10 +46,10 @@ export default class videoCardGrid extends React.Component {
 			            <button className="uk-icon-link" uk-icon="icon:more-vertical; ratio:0.8"></button>
 			            <div uk-dropdown="mode: click;pos: bottom-right">
 			               <ul className="uk-nav uk-dropdown-nav">
-				               <li><a href="#" name='plus' onClick={this.addToNowPlaying.bind(this)}>
+				               <li><a href="/" name='plus' onClick={this.addToNowPlaying.bind(this)}>
 				                  <span className="uk-margin-small-right" uk-icon="icon:plus"></span>
 				                   Add To Queue</a></li>
-				               <li><a href="#" name='download' onClick={this.downloadSong.bind(this)}>
+				               <li><a href="/" name='download' onClick={this.downloadSong.bind(this)}>
 				                  <span className="uk-margin-small-right" uk-icon="icon:download"></span>
 				                   Download</a></li>
 			               </ul>

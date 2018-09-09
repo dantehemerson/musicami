@@ -40,7 +40,10 @@ class Header extends React.Component {
                         <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt="Musicami"/></Link>
                      </div>
                      <div className="anyaudio-search-container uk-navbar-left uk-margin-medium-left uk-margin-medium-right uk-nav-center-sm">
-                        <form className="uk-search uk-search-default anyaudio-search" action="javascript:void(0)" 
+                     
+                  {/* action="javascript:void(0) */}
+                        <form className="uk-search uk-search-default anyaudio-search" 
+
                           type="submit" 
                           onSubmit={this.search.bind(this)}
                           autoComplete={'off'}>
