@@ -15,7 +15,7 @@
   flex-direction: row;
   align-items: center;
   border-right: 2px solid #d9e4e7;
-  padding-right: 20px;
+   padding-right: 30px;
 }
  .player-wrapper .player-name-artist {
   overflow: hidden;
@@ -50,7 +50,7 @@
 
   .player .plyr {
   position: static;
-   min-width: auto;
+   min-width: inherit;
 }
  .plyr .plyr__progress {
   width: 100vw;
@@ -58,6 +58,14 @@
   top: -10px;
   left: 0;
 }
+
+.plyr--audio .plyr__controls button, .plyr--audio .plyr__controls {
+  border-radius: 50%;
+}
+ .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover {
+  background: #ccdbdf;
+}
+
  progress.plyr__progress--played[value]::-webkit-progress-value {
   background-image: linear-gradient(-90deg, #F44336 0%, #FFA726 100%);
  }
@@ -85,6 +93,22 @@
   align-items: center;
   margin-left: auto;
 }
+
+/*// Change icons on state change*/
+.plyr--fullscreen-active .icon--exit-fullscreen,
+.plyr--muted .plyr__controls .icon--muted,
+.plyr--captions-active .plyr__controls .icon--captions-on {
+  display: block;
+}
+ .plyr--fullscreen-active .icon--exit-fullscreen + img,
+.plyr--muted .plyr__controls .icon--muted + img,
+.plyr--captions-active .plyr__controls .icon--captions-on + img {
+  display: none;
+}
+ .player .plyr__controls [data-plyr=play] {
+  margin-left: 0;
+}
+
 
 @media only screen and (max-width: 400px) {
   .plyr .volume-wrapper {
