@@ -1,6 +1,6 @@
 import { actionType } from '../actions/nowPlayingActions'
 import { removeDuplicateSongs } from '../utils/removeDuplicates'
-import songInArray from '../utils/songInArray'
+import { anyCommonSong, removeDuplicateIn, songInArray } from '../utils/songSearchUtils'
 
 const initialState = { 
 	nextSongs: [],
@@ -15,10 +15,16 @@ export function nowPlaying(state = initialState, action) {
 			let songs = state.nextSongs.slice(0)
 			songs.push(action.song)
 			let prev = state.previousSongs.filter(item => !songInArray(item, songs))
+			let suggestions = state.suggestedSongs
+
+			if(anyCommonSong(suggestions, songs)) {
+				suggestions = removeDuplicateIn(suggestions, songs)
+			}
 			return {
 				...state,
 				nextSongs: removeDuplicateSongs(songs),
-				previousSongs: prev
+				previousSongs: prev,
+				suggestedSongs: suggestions
 			}
 
 		case actionType.songRemove:
@@ -34,19 +40,20 @@ export function nowPlaying(state = initialState, action) {
 			}
 		case actionType.playedNext:
 			prev = state.previousSongs.slice(0)
-			prev.push(action.song)
-			console.log('Previous', prev)
+			prev.push(action.song)			
 			prev = removeDuplicateSongs(prev)
-			console.log('Previous Now', prev)
+			if(anyCommonSong(state.suggestedSongs, prev)) {
+				suggestions = removeDuplicateIn(state.suggestedSongs, prev)
+			}
 			return {
 				...state,
 				dispatchNext: false,
 				previousSongs: prev
 			}
 		case actionType.getSuggestions:
-			let suggestions = [];
+			suggestions = [];
 			if(action.suggestedSongs) {
-				suggestions = action.suggestedSongs.filter(x => !(songInArray(x, state.previousSongs) || songInArray(x, state.nextSongs))).slice(0, 5)
+				suggestions = removeDuplicateIn(removeDuplicateIn(action.suggestedSongs, state.previousSongs), state.nextSongs)
 			}
 			return {
 				...state,
