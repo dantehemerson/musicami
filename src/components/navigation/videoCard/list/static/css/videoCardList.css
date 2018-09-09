@@ -7,11 +7,17 @@
   flex-flow: row;
   height: 80px;
   margin: 8px 0;
+   justify-content: space-between;
 }
  .video-card-list-thumb {
   width: 80px;
   height: 80px;
 }
+
+.video-card-list-data {
+  display: flex;
+}
+
  .video-card-list-details {
   display: flex;
   flex-flow: column;

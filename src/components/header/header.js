@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import Logo from './static/img/logo.png'
-import AndroidIcon from './static/img/logo.png'
 import './static/css/header.css'
 
 export default class Header extends React.Component {
