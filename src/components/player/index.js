@@ -14,11 +14,15 @@ export default class Player extends React.Component {
 
 	componentDidMount() {
 		let audioElement = document.getElementById('audio-player')
-		if(audioElement) {
-			audioElement.addEventListener('ended', e => {
-				this.props.playNext()
-			})
-		}
+		if(!audioElement) return; 
+
+		audioElement.addEventListener('ended', e => {
+			this.props.playNext()
+		})
+		audioElement.addEventListener('error', e => {
+			console.log('ERROR: Error while playing audio ', e)
+			this.props.playNext()
+		})
 
 		window.addEventListener('keydown', (e) => {
 		      if (e.target === document.body) {
