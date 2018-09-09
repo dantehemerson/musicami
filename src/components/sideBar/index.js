@@ -1,5 +1,7 @@
 import React from 'react'
 
+import MiniCardList from './miniCard/miniCardList'
+
 export default class SideBar extends React.Component {
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.dispatchNext) {
@@ -24,25 +26,26 @@ export default class SideBar extends React.Component {
 			<div>
 				<div>
 					<b>Previous Songs:</b>
-					{
-						this.props.prevSongs.map(video => {
-							if(this.props.currentSong && this.props.currentSong.id === video.id) {
-								return <li key={video.id}><b>{ video.title }</b></li>
-							}
-							return <li key={video.id}>{ video.title }</li>
-						})
-					}
+					<MiniCardList 
+						songs={this.props.prevSongs}
+						currentSong={this.props.currentSong}
+						playSong={this.props.playSong}
+						addToNowPlaying={this.props.addToNowPlaying} />
 				</div>
 				<hr/>
 				<div>
 					<b>Upcoming songs:</b>
-					{ this.props.nextSongs.map(video => 
-						<li key={ video.id }>{ video.title }</li>) }
+					<MiniCardList
+						songs={this.props.nextSongs}
+						playSong={this.props.playSong}
+						addToNowPlaying={this.props.addToNowPlaying} />
 				</div>
 				<div style={{ marginTop: '10px'}}>
 					<b>Suggestions:</b>
-					{ this.props.suggestedSongs.map(video => 
-							<li key={ video.id }>{ video.title }</li>)}
+					<MiniCardList
+						songs={this.props.suggestedSongs}
+						playSong={this.props.playSong}
+						addToNowPlaying={this.props.addToNowPlaying} />
 				</div>				
 			</div>
 		)
