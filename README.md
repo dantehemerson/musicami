@@ -6,6 +6,11 @@ Enjoy live at https://dantehemerson.github.io/musicami/
 
 ## Development
 
+### Required packages
+```bash
+npm install -g yarn
+```
+
 ### Building dependencies
 ```bash
 yarn install
