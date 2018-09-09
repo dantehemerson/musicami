@@ -1,6 +1,8 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
+import './static/css/minicard.css'
+
 export default class MiniCard extends React.Component {
 
    play() {
