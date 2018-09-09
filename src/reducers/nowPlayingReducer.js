@@ -34,9 +34,14 @@ export function nowPlaying(state = initialState, action) {
 				dispatchNext: false
 			}
 		case actionType.getSuggestions:
+			let suggestions = [];
+			if(action.suggestedVideos) {
+				suggestions = action.suggestedVideos.slice(0, 5)
+			}
+			
 			return {
 				...state,
-				suggestedVideos: action.suggestedVideos
+				suggestedVideos: suggestions
 			}
 
 		default:
