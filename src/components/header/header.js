@@ -36,7 +36,7 @@ export default class Header extends React.Component {
                   <nav className="uk-navbar uk-navbar-container uk-navbar-transparent">
                      <div className="uk-navbar-left">
                         <a className="uk-navbar-toggle uk-margin-small-right" uk-icon="icon: menu;ratio: 1.5" href="#!"></a>
-                        <Link className="uk-navbar-item uk-logo" to='/'><img src={Logo} alt=""/></Link>
+                        <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt=""/></Link>
                      </div>
                      <div className="anyaudio-search-container uk-navbar-left uk-margin-large-left  uk-nav-center-sm">
                         <form className="uk-search uk-search-default anyaudio-search" action="javascript:void(0)" type="submit" onSubmit={this.search.bind(this)}>
@@ -45,7 +45,7 @@ export default class Header extends React.Component {
                         </form>
                      </div>
                      <div className="uk-navbar-right uk-margin-large-left">
-                        <a className="border-radius40 uk-button uk-button-default uk-button-large app-download-btn">
+                        <a className="uk-visible@m border-radius40 uk-button uk-button-default uk-button-large app-download-btn">
                            <img width="20px" src={AndroidIcon} alt="Android Icon"/>
                            <span className="uk-margin-small-left"> Download APP</span>
                         </a>
