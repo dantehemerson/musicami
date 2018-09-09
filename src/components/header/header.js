@@ -35,12 +35,12 @@ class Header extends React.Component {
          <div>
             <header className="app-header">
                <div className="uk-container">
-                  <nav className="uk-navbar uk-navbar-container uk-navbar-transparent">
+                  <nav className="uk-navbar uk-navbar-container uk-navbar-transparent navbar-custom">
                      <div className="uk-navbar-left">                       
                         <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt="Musicami"/></Link>
                      </div>
                      <div className="anyaudio-search-container uk-navbar-left uk-margin-medium-left uk-margin-medium-right uk-nav-center-sm">
-                     
+
                   {/* action="javascript:void(0) */}
                         <form className="uk-search uk-search-default anyaudio-search" 
 
