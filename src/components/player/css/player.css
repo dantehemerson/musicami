@@ -50,12 +50,13 @@
 
   .player .plyr {
   position: static;
+   min-width: auto;
 }
  .plyr .plyr__progress {
   width: 100vw;
   position: absolute;
   top: -10px;
-  left: -10px;
+  left: 0;
 }
  progress.plyr__progress--played[value]::-webkit-progress-value {
   background-image: linear-gradient(-90deg, #F44336 0%, #FFA726 100%);
@@ -83,4 +84,22 @@
   justify-content: center;
   align-items: center;
   margin-left: auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .plyr .volume-wrapper {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+   .player-wrapper {
+    padding: 12px 28px 9px;
+   }
+   .player-wrapper .player-meta {
+    width: 200px;
+  }
+   .plyr .plyr__volume {
+    display: none;
+  }
 }
