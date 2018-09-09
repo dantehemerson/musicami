@@ -89,8 +89,7 @@ module.exports = {
     // `web` extension prefixes have been added for better support
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
-    alias: {
-      
+    alias: {      
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -120,8 +119,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-              
+              eslintPath: require.resolve('eslint'),              
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -322,6 +320,16 @@ module.exports = {
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/api\.anyaudio\.in\/api\/v1\/playlists/,
+          handler: 'cacheFirst'
+        }, 
+        {
+          urlPattern: /^https:\/\/api\.anyaudio\.in\/api\/v1\/trending/,
+          handler: 'cacheFirst'
+        }
+      ]
     }),
     // Moment.js is an extremely popular library that bundles large locale files
     // by default due to how Webpack interprets its code. This is a practical
