@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap'
 
 import './static/css/root.css'
 
@@ -20,15 +19,15 @@ const Root = ({ store }) => (
 				<div className="page-top">
 					<Header />
 				</div>
-				<Row className="page-middle">
-					<Col sm={12} md={12} lg={10}>
+				<div className="page-middle">
+					<div>
 						<Route exact path='/' component={ NavigationHome } />
 						<Route exact path='/search/:q' component={ NavigationSearch }/>
-					</Col>					
-					<Col smHidden={ true } mdHidden={true} lg={2}>
+					</div>					
+					<div>
 						<Sidebar />
-					</Col>
-				</Row>
+					</div>
+				</div>
 				<div className="page-bottom">
 					<Player />
 				</div>
