@@ -4,6 +4,8 @@ A simple music player
 
 Enjoy live at https://dantehemerson.github.io/musicami/
 
+[![Build Status](https://travis-ci.org/dantehemerson/musicami.svg?branch=master)](https://travis-ci.org/dantehemerson/musicami)
+
 ## Development
 
 ### Required packages
