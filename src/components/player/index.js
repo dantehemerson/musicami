@@ -48,7 +48,7 @@ export default class Player extends React.Component {
 		      "<span class='plyr__sr-only'>Pause</span>",
 		      "</button>",
 		      "<button type='button' id='next-btn'>",
-		      `<img src=${nextIcon} alt=/>`,
+		      `<img src=${nextIcon} alt=''/>`,
 		      "<span class='plyr__sr-only'>Forward {seektime} secs</span>",
 		      "</button>",
 		      "<div class='volume-wrapper'>",
@@ -82,8 +82,8 @@ export default class Player extends React.Component {
 		})
 
 		let nextButton = document.getElementById('next-btn')
-		if(nextButton) {
-			nextButton.onClick = e => {
+		if(nextButton) {			
+			nextButton.onclick = e => {
 				this.props.playNext()
 			}
 		}
