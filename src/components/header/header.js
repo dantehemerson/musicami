@@ -7,6 +7,10 @@ import Logo from './static/img/logo.png'
 import './static/css/header.css'
 
 class Header extends React.Component {
+  constructor(props) {
+     super(props);
+      this.search = this.search.bind(this);
+   }
    componentDidMount() {
       let searchElement = document.getElementById('search-input')
       if(searchElement) {
@@ -42,14 +46,10 @@ class Header extends React.Component {
                      <div className="anyaudio-search-container uk-navbar-left uk-nav-center-sm">
 
                   {/* action="javascript:void(0) */}
-                        <form className="uk-search uk-search-default anyaudio-search" 
-
-                          type="submit" 
-                          onSubmit={this.search.bind(this)}
-                          autoComplete={'off'}>
+                       <div className="uk-search uk-search-default anyaudio-search">
                            <span className="uk-search-icon" uk-icon="icon: search"></span>
                            <input className="uk-search-input border-radius40" id='search-input' type="text" placeholder="Search" />
-                        </form>
+                        </div>
                      </div>
                   </nav>
                </div>
