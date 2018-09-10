@@ -14,7 +14,7 @@ export default class NavigationSearch extends React.Component {
 		this.makeSearch(this.props)
 	}
 
-	coponentWillReceiveProps(nextProps) {
+	componentWillReceiveProps(nextProps) {
 		this.makeSearch(nextProps)
 	}
 

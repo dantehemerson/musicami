@@ -42,15 +42,20 @@ class Header extends React.Component {
                   <nav className="uk-navbar uk-navbar-container uk-navbar-transparent navbar-custom">
                      <div className="uk-navbar-left">                       
                         <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt="Musicami"/></Link>
-                     </div>
-                     <div className="anyaudio-search-container uk-navbar-left uk-nav-center-sm">
+                     </div>                     
 
-                  {/* action="javascript:void(0) */}
-                       <div className="uk-search uk-search-default anyaudio-search">
-                           <span className="uk-search-icon" uk-icon="icon: search"></span>
-                           <input className="uk-search-input border-radius40" id='search-input' type="text" placeholder="Search" />
-                        </div>
+                     <div className="anyaudio-search-container uk-navbar-left uk-nav-center-sm">
+                        <div className="uk-search uk-search-default anyaudio-search">
+                           <span className="uk-search-icon" uk-icon="icon: search" />
+                           <input
+                             className="uk-search-input border-radius40"
+                              id='search-input'
+                              type="text"
+                              placeholder="Search"
+                            />
+                       </div>
                      </div>
+
                   </nav>
                </div>
            </header>
