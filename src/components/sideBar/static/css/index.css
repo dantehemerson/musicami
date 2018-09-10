@@ -24,6 +24,10 @@
     width: 100vw;
   }
 }
+
+  .sidebar .sidebar-title {
+    padding-left: 30px;
+  }
  @media (min-width: 960px) {
   .sidebar {
     display: block !important;
