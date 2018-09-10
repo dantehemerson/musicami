@@ -12,6 +12,10 @@ export default class MiniCard extends React.Component {
       this.props.addToNowPlaying(this.props.song);
    }
 
+   removeSong() {
+      this.props.removeSong(this.props.song);
+    }
+
    render() {
       const MAX_TITLE_LENGTH = 24
       let videoTitle = this.props.song.title
@@ -36,7 +40,7 @@ export default class MiniCard extends React.Component {
             </div>
             <div className="add-to-upnext">
                {this.props.name === 'related'?<button name='plus' onClick={this.addToNowPlaying.bind(this)} className="uk-icon-link uk-icon" uk-icon="icon:plus;"/>:
-               <button name='plus' className="uk-icon-link uk-icon" uk-icon="icon:close;"/>}
+               <button name='plus' className="uk-icon-link uk-icon" uk-icon="icon:close;" onClick={this.removeSong.bind(this)}/>}
             </div>
          </div>
     )
