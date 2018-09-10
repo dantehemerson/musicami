@@ -11,7 +11,7 @@ export default {
 	},
 	fetchStreamURL: (streamURL) => {
 		return new Promise((resolve, reject) => {			
-			fetch(host + streamURL)
+			fetch(host + streamURL + '&quality=hi')
 				.then(response => 
 					response.json().then(data => resolve(host + data.url)))
 		})
