@@ -155,12 +155,8 @@ progress.plyr__volume--display[value]::-webkit-progress-value {
     width: 200px;
   }
 
-  .plyr .volume-wrapper {
+  .plyr .plyr__volume {
     display: none;
-  }
-
-  .player-queue{
-    margin-left: auto !important;
   }
 }
 
