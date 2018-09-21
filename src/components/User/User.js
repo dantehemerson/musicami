@@ -1,5 +1,6 @@
 import React from 'react'
 import firebase from 'firebase'
+import styled from 'styled-components'
 
 var config = {
   apiKey: 'AIzaSyCA53LFVi5H5l7sy9DWbSJ4F_zBvhih3JQ',
@@ -11,6 +12,27 @@ var config = {
 }
 
 firebase.initializeApp(config)
+
+
+const Container = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
+
+const Username = styled.p`
+	margin: 0;
+`
+
+const Avatar = styled.img`
+	background: gray;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	margin-right: 5px;
+	margin-left: 10px;
+	visibility: visible !important;
+`
 
 class User extends React.Component {
 	constructor() {
@@ -33,9 +55,10 @@ class User extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h3>{ this.state.name }</h3>
-			</div>
+			<Container>
+				<Avatar/>
+				<Username>{ this.state.name }</Username>
+			</Container>
 		)
 	}
 }

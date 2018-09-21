@@ -57,10 +57,7 @@ class Header extends React.Component {
                             />
                        </div>
                      </div>
-                     <div>
                       <User/>
-                     </div>
-
                   </nav>
                </div>
            </header>
