@@ -21,7 +21,9 @@ class User extends React.Component {
 	}
 
 	componentWillMount() {
-		const nameRef = firebase.database().ref().child('object').child('name')
+		const rootRef = firebase.database().ref()
+		const nameRef = rootRef.child('users').child('dantehemerson').child('name')
+		console.log(nameRef)
 		nameRef.on('value', (snapshot) => {
 			this.setState({
 				name: snapshot.val()
@@ -30,7 +32,11 @@ class User extends React.Component {
 	}
 
 	render() {
-		return <h3>{ this.state.name }</h3>
+		return (
+			<div>
+				<h3>{ this.state.name }</h3>
+			</div>
+		)
 	}
 }
 
