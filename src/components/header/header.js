@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { keys } from '../../constants'
+import styled from 'react-emotion'
 
 import Logo from './static/img/logo.png'
 import './static/css/header.css'
@@ -20,7 +21,7 @@ class Header extends React.Component {
                this.search()
             }
          })
-      } 
+      }
    }
 
    search() {
@@ -29,7 +30,7 @@ class Header extends React.Component {
       const query = searchElement.value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
       if(query.length === 0) {
         return
-      }      
+      }
       searchElement.blur()
       this.props.history.push('/search/' + query)
     }
@@ -40,9 +41,9 @@ class Header extends React.Component {
             <header className="app-header">
                <div className="uk-container">
                   <nav className="uk-navbar uk-navbar-container uk-navbar-transparent navbar-custom">
-                     <div className="uk-navbar-left">                       
+                     <div className="uk-navbar-left">
                         <Link className="uk-navbar-item uk-logo uk-visible@s" to='/'><img src={Logo} alt="Musicami"/></Link>
-                     </div>                     
+                     </div>
 
                      <div className="anyaudio-search-container uk-navbar-left uk-nav-center-sm">
                         <div className="uk-search uk-search-default anyaudio-search">
