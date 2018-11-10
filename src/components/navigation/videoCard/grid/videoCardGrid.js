@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card, Icon, Reveal, Image } from 'semantic-ui-react'
+import { Card, Icon, Dropdown, Reveal, Image } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
 import './static/css/videoCardGrid.css'
+import Button from '../../../CircleButton'
 
 export default class videoCardGrid extends React.Component {
 	constructor(props) {
@@ -30,46 +31,52 @@ export default class videoCardGrid extends React.Component {
 		return (
 			<div className="uk-width-1-4@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
 
-			  <Card>
-          <Reveal animated='small fade'
+			  <Card
+          className={css`
+
+          `}>
+          <div
             className={css`
+              position: relative;
               &:hover {
-                cursor: pointer;
+                div {
+                  opacity: 1;
+                }
               }
             `}>
-            <Reveal.Content visible>
-              <Image
-                className={css`
-                  object-fit: none !important;
-                `}
-                src={this.props.video.thumb}
-                alt={videoTitle}/>
-            </Reveal.Content>
-            <Reveal.Content hidden>
-              <div
-                className={css`
-                  position: relative;
-                `}>
-                <Image
-                className={css`
-                  object-fit: none !important;
-                `}
-                src={this.props.video.thumb}
-                alt={videoTitle}/>
-                <div
-                  className={css`
-                    position: absolute;
-                    background: #efeff2;
-                    opacity: .24;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    right: 0;
-                  `}>
-                </div>
-              </div>
-            </Reveal.Content>
-          </Reveal>
+            <Image
+            className={css`
+              object-fit: none !important;
+            `}
+            src={this.props.video.thumb}
+            alt={videoTitle}/>
+            <div
+              className={css`
+                position: absolute;
+                background: rgba(218, 218, 218, 0.32);
+                opacity: 1;
+                transition: .2s;
+                display: flex;
+                align-items: flex-end;
+                padding: 14px 8px;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+              `}>
+              <Button size='small'/>
+              <Button size='small' name='heart'/>
+              <Dropdown icon='heart' text=''  pointing className='icon'>
+                    <Dropdown.Menu>
+                      <Dropdown.Header>Categories</Dropdown.Header>
+                      <Dropdown.Item>Home Goods</Dropdown.Item>
+                      <Dropdown.Item>Add to Queue</Dropdown.Item>
+                      <Dropdown.Divider />
+                      <Dropdown.Item>Add to My Music</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+            </div>
+          </div>
           <Card.Content>
 			      <Card.Header
               as='span'

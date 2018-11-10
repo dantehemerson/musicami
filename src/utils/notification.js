@@ -1,4 +1,4 @@
-import Logo from '../components/header/static/img/logo.png'
+import Logo from '../assets/images/logo.png'
 
 export default (title, body) => {
 	Notification
