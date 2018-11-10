@@ -1,13 +1,16 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import { Link } from 'react-router-dom'
 
 import icon from '../assets/images/logo.png'
 
-const Logo = styled('div')`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 10px 12px 0;
+  padding-right: 10px;
+  margin: 12px 0;
+  text-decoration: none !important;
 `
 
 const Title = styled('h3')`
@@ -20,7 +23,7 @@ const Title = styled('h3')`
 `
 
 export default props => (
-  <Logo>
+  <Logo to='/'>
     <img
       className={css`
         width: 45px;

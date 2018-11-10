@@ -25,12 +25,15 @@ const Root = ({ store }) => (
       	<div
           className={css`
             margin-left: 220px;
+            margin-top: 58px;
           `}>
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/search/:q' component={ NavigationSearch }/>
+          {/*
           <div className="sidebar-container">
             <Sidebar />
           </div>
+        */}
         </div>
   			<div className="page-bottom">
           <Player/>
