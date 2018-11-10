@@ -1,4 +1,6 @@
 import React from 'react'
+import { Card, Icon, Image } from 'semantic-ui-react'
+import styled, { css } from 'react-emotion'
 
 import './static/css/videoCardGrid.css'
 
@@ -26,23 +28,38 @@ export default class videoCardGrid extends React.Component {
 		}
 
 		return (
-			<div className="uk-width-1-5@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
-			  <div>
-			    <div className="video-thumb" onClick={this.playSong}>
-			      <div className="play-btn">
-			        <svg width="40" height="39" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd" opacity=".951"><path d="M19.703.277C8.876.277.088 8.855.088 19.426c0 10.57 8.788 19.149 19.615 19.149 10.827 0 19.615-8.58 19.615-19.15C39.318 8.856 30.53.278 19.703.278z" fillOpacity=".75" fill="#FFF" /><path fillOpacity=".87" fill="#000" d="M17.249 26.973V11.879l10.307 7.547z" /></g></svg>
-			      </div>
-			      <img src={this.props.video.thumb} alt="" />
-			      <div className="thumb-overlay" />
-			    </div>
+			<div className="uk-width-1-4@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
 
-			    <div className="video-meta">
-			      <div>
-			        <div className="video-title" onClick={this.playSong}>{videoTitle}</div>
-			        <div className="video-channel">{this.props.video.uploader}</div>
-			        <div className="video-views">{this.props.video.views}</div>
-			      </div>
-
+			  <Card>
+			    <Image
+            className={css`
+              object-fit: none !important;
+            `}
+            src={this.props.video.thumb}
+            alt={videoTitle}/>
+          <Card.Content>
+			      <Card.Header
+              as='span'
+              className={css`
+                font-size: 14px !important;
+                white-space: nowrap !important;
+                text-overflow: ellipsis !important;
+                overflow: hidden !important;
+              `}
+              title={videoTitle}
+              onClick={this.playSong}>{videoTitle}</Card.Header>
+			      <Card.Meta
+              className={css`
+                font-size: 12px !important;
+                color: #72727d !important;
+              `}>by {this.props.video.uploader}</Card.Meta>
+			      <Card.Description
+              className={css`
+                margin-top: 0 !important;
+                font-size: 11px !important;
+                color: #72727d !important;
+              `}>{this.props.video.views} listens</Card.Description>
+            {/*
 			      <div className="more-option uk-inline">
 			        <button
 			          className="uk-icon-link"
@@ -50,8 +67,10 @@ export default class videoCardGrid extends React.Component {
 			          onClick={this.addToNowPlaying}
 			        />
 			      </div>
-			    </div>
-			  </div>
+          */}
+			    </Card.Content>
+			  </Card>
+
 			</div>
 		)
 	}
