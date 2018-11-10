@@ -14,14 +14,19 @@ import NavigationSearch from './containers/navigation/navigationSearchContainer'
 import Player from './containers/playerContainer'
 import Sidebar from './containers/sideBarContainer'
 import 'semantic-ui-css/semantic.min.css';
+import SidebarMenu from './components/SidebarMenu'
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
 		<BrowserRouter basename="/musicami">
       <div>
-      <Header />
-    	<div className="page-middle uk-flex">
-        <div className="content-container uk-container">
+      <Header/>
+      <SidebarMenu/>
+    	<div
+        className={css`
+          margin-left: 220px;
+        `}>
+        <div >
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/search/:q' component={ NavigationSearch }/>
         </div>
