@@ -5,12 +5,6 @@ import styled, { css } from 'react-emotion'
 import './static/css/videoCardGrid.css'
 import Button from '../../../CircleButton'
 
-const options = [
-  { key: 'delete', icon: 'heart', text: 'Add to My Music', value: 'delete' },
-  { key: 'edit', icon: 'list', text: 'Add to Playlist', value: 'edit' },
-  { key: 'hide', icon: 'list ol', text: 'Add to Queue', value: 'hide' },
-]
-
 export default class videoCardGrid extends React.Component {
 	constructor(props) {
     	super(props);
@@ -57,6 +51,7 @@ export default class videoCardGrid extends React.Component {
               position: relative;
               box-shadow: 0 1px 6px rgba(25,25,34,.16);
               border-radius: 4px !important;
+              cursor: pointer;
               &:hover, &:focus {
                 box-shadow: 0 1px 6px rgba(25,25,34,.24);
                 div {
@@ -95,7 +90,6 @@ export default class videoCardGrid extends React.Component {
                 closeOnChange={true}
                 floating
                 labeled={false}
-                options={options}
                 icon='ellipsis horizontal'
                 className={css`
                   .icon.ellipsis {
@@ -114,7 +108,13 @@ export default class videoCardGrid extends React.Component {
                   div.text {
                     display: none !important;
                   }
-                `}/>
+                `}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item icon='heart' text='Add to My Music' />
+                    <Dropdown.Item icon='list' text='Add to Playlist' />
+                    <Dropdown.Item icon='list ol' text='Add to Queue' />
+                  </Dropdown.Menu>
+                </Dropdown>
             </div>
           </div>
           <Card.Content>
