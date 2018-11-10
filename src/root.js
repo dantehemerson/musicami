@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
+import { Button, Icon, Image, Menu, Segment, Sidebar as SidebarSem } from 'semantic-ui-react'
+import { css } from 'react-emotion'
 
 import './static/css/root.css'
 
@@ -16,23 +18,21 @@ import 'semantic-ui-css/semantic.min.css';
 const Root = ({ store }) => (
 	<Provider store={ store }>
 		<BrowserRouter basename="/musicami">
-			<div className="page">
-				<div className="page-top">
-					<Header />
-				</div>
-				<div className="page-middle uk-flex">
-					<div className="content-container uk-container">
-						<Route exact path='/' component={ NavigationHome } />
-						<Route exact path='/search/:q' component={ NavigationSearch }/>
-					</div>
-					<div className="sidebar-container">
-						<Sidebar />
-					</div>
-				</div>
-				<div className="page-bottom">
-					<Player />
-				</div>
-			</div>
+      <div>
+      <Header />
+    	<div className="page-middle uk-flex">
+        <div className="content-container uk-container">
+          <Route exact path='/' component={ NavigationHome } />
+          <Route exact path='/search/:q' component={ NavigationSearch }/>
+        </div>
+        <div className="sidebar-container">
+          <Sidebar />
+        </div>
+      </div>
+			<div className="page-bottom">
+        <Player/>
+      </div>
+      </div>
 		</BrowserRouter>
 	</Provider>
 )

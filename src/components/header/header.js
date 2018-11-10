@@ -9,7 +9,7 @@ const Wrapper = styled('div')`
   display: flex !important;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 270px;
   right: 0;
   background: white;
   z-index: 3;
