@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
 import { Divider, Icon, Menu } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import Logo from '../Logo'
 
@@ -28,23 +29,28 @@ export default props => (
         padding: 15px;
       `}>
       <Menu.Item
-        onClick={() => console.log('Ci')}
+        as={Link}
+        to='/'
         name='Home'/>
       <Menu.Item
-        onClick={() => console.log('Ci')}
+        as={Link}
+        to='/explore'
         name='Explore'/>
       <Divider inverted />
       <Menu.Item
+        as={Link}
+        to='/profile/id'
         icon='music'
-        onClick={() => console.log('Ci')}
         name='My Music'/>
       <Menu.Item
+        as={Link}
+        to='/profile/id/loved'
         icon='heart'
-        onClick={() => console.log('Ci')}
         name='Favorites'/>
       <Menu.Item
+        as={Link}
+        to='/profile/id/playlists'
         icon='list ul'
-        onClick={() => console.log('Ci')}
         name='Playlists'/>
     </Menu>
   </Sidebar>
