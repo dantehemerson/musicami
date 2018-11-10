@@ -7,7 +7,7 @@ const Logo = styled('div')`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 4px;
+  padding: 12px 10px 12px 0;
 `
 
 const Title = styled('h3')`

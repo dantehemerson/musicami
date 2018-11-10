@@ -7,6 +7,7 @@ const Sidebar = styled('div')`
   background: rgb(35, 35, 44);
   width: 220px;
   position: fixed;
+  padding-top: 20px;
   left: 0;
   top: 0;
   z-index: 4;

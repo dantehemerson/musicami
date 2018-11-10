@@ -20,23 +20,21 @@ const Root = ({ store }) => (
 	<Provider store={ store }>
 		<BrowserRouter basename="/musicami">
       <div>
-      <Header/>
-      <SidebarMenu/>
-    	<div
-        className={css`
-          margin-left: 220px;
-        `}>
-        <div >
+        <Header/>
+        <SidebarMenu/>
+      	<div
+          className={css`
+            margin-left: 220px;
+          `}>
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/search/:q' component={ NavigationSearch }/>
+          <div className="sidebar-container">
+            <Sidebar />
+          </div>
         </div>
-        <div className="sidebar-container">
-          <Sidebar />
+  			<div className="page-bottom">
+          <Player/>
         </div>
-      </div>
-			<div className="page-bottom">
-        <Player/>
-      </div>
       </div>
 		</BrowserRouter>
 	</Provider>

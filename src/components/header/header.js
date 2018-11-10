@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { keys } from '../../constants'
 import styled, { css } from 'react-emotion'
 import { Input } from 'semantic-ui-react'
+
+import { keys } from '../../constants'
 
 const Wrapper = styled('div')`
   box-shadow: 0 0 10px gray;
