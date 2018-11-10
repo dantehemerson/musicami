@@ -33,12 +33,21 @@ export default class videoCardGrid extends React.Component {
 
 			  <Card
           className={css`
-
+            &&& {
+              box-shadow: 0 0 0 gray !important;
+              .content {
+                padding: .8em 0;
+                border-top: none;
+              }
+            }
           `}>
           <div
             className={css`
               position: relative;
+              box-shadow: 0 1px 6px rgba(25,25,34,.16);
+              border-radius: 4px !important;
               &:hover {
+                box-shadow: 0 1px 6px rgba(25,25,34,.24);
                 div {
                   opacity: 1;
                 }
@@ -47,6 +56,7 @@ export default class videoCardGrid extends React.Component {
             <Image
             className={css`
               object-fit: none !important;
+              border-radius: 4px !important;
             `}
             src={this.props.video.thumb}
             alt={videoTitle}/>
@@ -54,6 +64,7 @@ export default class videoCardGrid extends React.Component {
               className={css`
                 position: absolute;
                 background: rgba(218, 218, 218, 0.32);
+                border-radius: 4px !important;
                 opacity: 1;
                 transition: .2s;
                 display: flex;
@@ -66,7 +77,13 @@ export default class videoCardGrid extends React.Component {
               `}>
               <Button size='small'/>
               <Button size='small' name='heart'/>
-              <Dropdown icon='heart' text=''  pointing className='icon'>
+              <Dropdown
+                compact
+                basic
+                closeOnChange={true}
+                floating
+                icon='ellipsis horizontal'
+                className='icon'>
                     <Dropdown.Menu>
                       <Dropdown.Header>Categories</Dropdown.Header>
                       <Dropdown.Item>Home Goods</Dropdown.Item>
@@ -85,6 +102,7 @@ export default class videoCardGrid extends React.Component {
                 white-space: nowrap !important;
                 text-overflow: ellipsis !important;
                 overflow: hidden !important;
+                color: #32323d !important;
               `}
               title={videoTitle}
               onClick={this.playSong}>{videoTitle}</Card.Header>
