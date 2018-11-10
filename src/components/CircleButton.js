@@ -17,7 +17,7 @@ export default props => (
         margin-right: 9px;
         transition-duration: .15s;
         &:hover {
-          transform: scale(1.15);
+          transform: scale3d(1.2,1.2,1.2);
         }
       }
     `}

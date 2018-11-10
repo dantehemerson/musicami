@@ -39,6 +39,17 @@ export default class videoCardGrid extends React.Component {
                 padding: .8em 0;
                 border-top: none;
               }
+              .menu {
+                left: -54px;
+                color: #52525d;
+                border: 1px solid #d1d1d7 !important;
+                border-radius: 3px !important;
+                box-shadow: 0 1px 5px rgba(10,10,22,.25) !important;
+
+                .item {
+                  font-size: .9rem;
+                }
+              }
             }
           `}>
           <div
@@ -46,7 +57,7 @@ export default class videoCardGrid extends React.Component {
               position: relative;
               box-shadow: 0 1px 6px rgba(25,25,34,.16);
               border-radius: 4px !important;
-              &:hover {
+              &:hover, &:focus {
                 box-shadow: 0 1px 6px rgba(25,25,34,.24);
                 div {
                   opacity: 1;
@@ -65,7 +76,7 @@ export default class videoCardGrid extends React.Component {
                 position: absolute;
                 background: rgba(218, 218, 218, 0.32);
                 border-radius: 4px !important;
-                opacity: 1;
+                opacity: 0;
                 transition: .2s;
                 display: flex;
                 align-items: flex-end;
@@ -80,10 +91,26 @@ export default class videoCardGrid extends React.Component {
               <Dropdown
                 compact
                 basic
+                pointing
                 closeOnChange={true}
                 floating
                 icon='ellipsis horizontal'
-                className='icon'>
+                className={css`
+                  .icon {
+                    color: white;
+                    background: black;
+                    padding: 18px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition-duration: .15s;
+                    &:hover {
+                      transform: scale3d(1.2,1.2,1.2);
+                    }
+                  }
+                `}
+                >
                     <Dropdown.Menu>
                       <Dropdown.Header>Categories</Dropdown.Header>
                       <Dropdown.Item>Home Goods</Dropdown.Item>
