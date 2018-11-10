@@ -13,7 +13,7 @@ const Wrapper = styled('div')`
   left: 220px;
   right: 0;
   background: white;
-  z-index: 3;
+  z-index: 999;
   align-items: center;
   height: 58px;
 `

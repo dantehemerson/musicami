@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Icon, Reveal, Image } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
 import './static/css/videoCardGrid.css'
@@ -31,12 +31,45 @@ export default class videoCardGrid extends React.Component {
 			<div className="uk-width-1-4@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
 
 			  <Card>
-			    <Image
+          <Reveal animated='small fade'
             className={css`
-              object-fit: none !important;
-            `}
-            src={this.props.video.thumb}
-            alt={videoTitle}/>
+              &:hover {
+                cursor: pointer;
+              }
+            `}>
+            <Reveal.Content visible>
+              <Image
+                className={css`
+                  object-fit: none !important;
+                `}
+                src={this.props.video.thumb}
+                alt={videoTitle}/>
+            </Reveal.Content>
+            <Reveal.Content hidden>
+              <div
+                className={css`
+                  position: relative;
+                `}>
+                <Image
+                className={css`
+                  object-fit: none !important;
+                `}
+                src={this.props.video.thumb}
+                alt={videoTitle}/>
+                <div
+                  className={css`
+                    position: absolute;
+                    background: #efeff2;
+                    opacity: .24;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                  `}>
+                </div>
+              </div>
+            </Reveal.Content>
+          </Reveal>
           <Card.Content>
 			      <Card.Header
               as='span'
