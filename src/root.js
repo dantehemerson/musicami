@@ -11,6 +11,7 @@ import NavigationHome from './containers/navigation/navigationHomeContainer'
 import NavigationSearch from './containers/navigation/navigationSearchContainer'
 import Player from './containers/playerContainer'
 import Sidebar from './containers/sideBarContainer'
+import 'semantic-ui-css/semantic.min.css';
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
@@ -23,7 +24,7 @@ const Root = ({ store }) => (
 					<div className="content-container uk-container">
 						<Route exact path='/' component={ NavigationHome } />
 						<Route exact path='/search/:q' component={ NavigationSearch }/>
-					</div>					
+					</div>
 					<div className="sidebar-container">
 						<Sidebar />
 					</div>
