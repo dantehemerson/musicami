@@ -5,6 +5,12 @@ import styled, { css } from 'react-emotion'
 import './static/css/videoCardGrid.css'
 import Button from '../../../CircleButton'
 
+const options = [
+  { key: 'delete', icon: 'heart', text: 'Add to My Music', value: 'delete' },
+  { key: 'edit', icon: 'list', text: 'Add to Playlist', value: 'edit' },
+  { key: 'hide', icon: 'list ol', text: 'Add to Queue', value: 'hide' },
+]
+
 export default class videoCardGrid extends React.Component {
 	constructor(props) {
     	super(props);
@@ -21,13 +27,7 @@ export default class videoCardGrid extends React.Component {
 	}
 
 	render() {
-		const MAX_TITLE_LENGTH = 33
-		let videoTitle = this.props.video.title
-
-		if(videoTitle.length > MAX_TITLE_LENGTH) {
-		 	videoTitle =  videoTitle.substring(0, MAX_TITLE_LENGTH)+'... '
-		}
-
+		const videoTitle = this.props.video.title
 		return (
 			<div className="uk-width-1-4@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
 
@@ -40,7 +40,7 @@ export default class videoCardGrid extends React.Component {
                 border-top: none;
               }
               .menu {
-                left: -54px;
+                left: -68px;
                 color: #52525d;
                 border: 1px solid #d1d1d7 !important;
                 border-radius: 3px !important;
@@ -94,9 +94,11 @@ export default class videoCardGrid extends React.Component {
                 pointing
                 closeOnChange={true}
                 floating
+                labeled={false}
+                options={options}
                 icon='ellipsis horizontal'
                 className={css`
-                  .icon {
+                  .icon.ellipsis {
                     color: white;
                     background: black;
                     padding: 18px;
@@ -109,16 +111,10 @@ export default class videoCardGrid extends React.Component {
                       transform: scale3d(1.2,1.2,1.2);
                     }
                   }
-                `}
-                >
-                    <Dropdown.Menu>
-                      <Dropdown.Header>Categories</Dropdown.Header>
-                      <Dropdown.Item>Home Goods</Dropdown.Item>
-                      <Dropdown.Item>Add to Queue</Dropdown.Item>
-                      <Dropdown.Divider />
-                      <Dropdown.Item>Add to My Music</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  div.text {
+                    display: none !important;
+                  }
+                `}/>
             </div>
           </div>
           <Card.Content>
@@ -144,15 +140,6 @@ export default class videoCardGrid extends React.Component {
                 font-size: 11px !important;
                 color: #72727d !important;
               `}>{this.props.video.views} listens</Card.Description>
-            {/*
-			      <div className="more-option uk-inline">
-			        <button
-			          className="uk-icon-link"
-			          uk-icon="icon:plus; ratio:0.8"
-			          onClick={this.addToNowPlaying}
-			        />
-			      </div>
-          */}
 			    </Card.Content>
 			  </Card>
 
