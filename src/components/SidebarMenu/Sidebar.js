@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
+import { Divider, Icon, Menu } from 'semantic-ui-react'
 
 import Logo from '../Logo'
 
@@ -17,14 +18,34 @@ const Sidebar = styled('div')`
 export default props => (
   <Sidebar>
     <Logo/>
-    <ul>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-      <li>Item</li>
-    </ul>
+    <Menu
+      inverted
+      secondary
+      vertical
+      className={css`
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 15px;
+      `}>
+      <Menu.Item
+        onClick={() => console.log('Ci')}
+        name='Home'/>
+      <Menu.Item
+        onClick={() => console.log('Ci')}
+        name='Explore'/>
+      <Divider inverted />
+      <Menu.Item
+        icon='music'
+        onClick={() => console.log('Ci')}
+        name='My Music'/>
+      <Menu.Item
+        icon='heart'
+        onClick={() => console.log('Ci')}
+        name='Favorites'/>
+      <Menu.Item
+        icon='list ul'
+        onClick={() => console.log('Ci')}
+        name='Playlists'/>
+    </Menu>
   </Sidebar>
 )
