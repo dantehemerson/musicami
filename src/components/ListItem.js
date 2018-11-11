@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, List, Icon, Popup } from 'semantic-ui-react'
+import { List, Icon, Popup } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
 import CircleButton from './CircleButton'
@@ -78,6 +78,44 @@ export default ({ song }) => (
         inverted
         size='mini'/>
     </Favorite>
-    { song.title }
+    <span
+      className={css`
+        color: #32323d;
+        font-size: 14px;
+        margin: 0;
+        padding-left: 12px;
+        flex: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap !important;
+        overflow: hidden;
+      `}>
+      { song.title }
+    </span>
+    <span
+      className={css`
+        color: #32323d;
+        font-size: 14px;
+        margin: 0;
+        padding-left: 12px;
+        width: 120px;
+        text-overflow: ellipsis;
+        white-space: nowrap !important;
+        overflow: hidden;
+      `}>
+      { song.uploader }
+    </span>
+    <span
+      className={css`
+        font-size: 14px;
+        margin: 0;
+        padding-left: 12px;
+        width: 60px;
+        text-overflow: ellipsis;
+        white-space: nowrap !important;
+        overflow: hidden;
+      `}>
+      { song.length }
+    </span>
+
   </ListItem>
 )
