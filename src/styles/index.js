@@ -1,7 +1,10 @@
 import { injectGlobal } from 'emotion'
+import slickStyles from './slick'
 
 injectGlobal`
   body {
-    background: red !important;
+
   }
+
+  ${slickStyles}
 `
