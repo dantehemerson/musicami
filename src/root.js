@@ -12,6 +12,7 @@ import Header from './containers/headerContainer'
 import NavigationHome from './containers/navigation/navigationHomeContainer'
 import NavigationSearch from './containers/navigation/navigationSearchContainer'
 import Explore from './containers/Explore'
+import Channel from './containers/Channel'
 import Player from './containers/playerContainer'
 import Sidebar from './containers/sideBarContainer'
 import 'semantic-ui-css/semantic.min.css';
@@ -33,6 +34,7 @@ const Root = ({ store }) => (
           `}>
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/explore' component={ Explore } />
+          <Route exact path='/explore/:channelId' component={ Channel } />
           <Route exact path='/search/:q' component={ NavigationSearch }/>
           {/*
           <div className="sidebar-container">

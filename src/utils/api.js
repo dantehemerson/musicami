@@ -10,9 +10,9 @@ export default {
 		})
 	},
 	fetchStreamURL: (streamURL) => {
-		return new Promise((resolve, reject) => {			
+		return new Promise((resolve, reject) => {
 			fetch(host + streamURL + '&quality=hi')
-				.then(response => 
+				.then(response =>
 					response.json().then(data => resolve(host + data.url)))
 		})
 	},
@@ -28,6 +28,14 @@ export default {
 				.then(response => response.json().then(data => resolve(data.results)))
 		})
 	},
+  getChannelSongs: (channel, count) => {
+    return new Promise((resolve, reject) => {
+      fetch(host + '/api/v1/trending?' + getQueryString({
+        type: channel,
+        number: count }))
+        .then(response => response.json().then(data => resolve(data.results)))
+    })
+  },
 	getPlaylistSongs: (playlists, count) => {
 		let commaSeparatedPlaylists = playlists.map(a => a.playlist).join()
 		return new Promise((resolve, reject) => {

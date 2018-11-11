@@ -18,7 +18,6 @@ class Explore extends React.Component {
         <Loader active inline='centered'>Loading...</Loader>
       )
     }
-    console.log(this.props)
     return (
       <div>
         {
