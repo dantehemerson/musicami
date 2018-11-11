@@ -3,7 +3,7 @@ import styled, { css } from 'react-emotion'
 import { Divider, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
-import Logo from '../Logo'
+import Logo from './Logo'
 
 const Sidebar = styled('div')`
   background: rgb(35, 35, 44);
