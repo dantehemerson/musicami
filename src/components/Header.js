@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'react-emotion'
 import { Input } from 'semantic-ui-react'
+import _ from 'lodash'
 
 import { keys } from '../constants'
 
@@ -31,7 +32,7 @@ class Header extends React.Component {
 
   search = () => {
     const searchElement = document.getElementById('search-input')
-    const query = searchElement.value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
+    const query = _.trim(searchElement.value)
     if(query.length === 0) return
     this.props.history.push('/search/' + query)
   }
