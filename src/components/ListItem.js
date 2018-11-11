@@ -2,6 +2,8 @@ import React from 'react'
 import { Image, List } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
+import CircleButton from './CircleButton'
+
 const ListItem = styled(List.Item)`
   height: 52px;
   display: flex !important;
@@ -11,6 +13,12 @@ const ListItem = styled(List.Item)`
   margin: -1px 0 !important;
   &:hover {
     background-color: #efeff2 !important;
+    i.play.small.circular {
+      display: inherit !important;
+    }
+    .index {
+      display: none !important;
+    }
   }
   &:before {
     content: '';
@@ -23,10 +31,25 @@ const ListItem = styled(List.Item)`
   }
 `
 
+const Index = styled('div')`
+  display: flex;
+  height: 28px;
+  width: 32px;
+  align-items: center;
+  justify-content: center;
+  i.play.small.circular {
+    display: none !important;
+  }
+`
+
 export default ({ song }) => (
   <ListItem>
-    <List.Content>
-      { song.title }
-    </List.Content>
+    <Index>
+      <CircleButton
+        marginRight='0'
+        size='mini'/>
+      <span className='index'>12</span>
+    </Index>
+    { song.title }
   </ListItem>
 )
