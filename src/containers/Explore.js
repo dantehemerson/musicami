@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { Loader } from 'semantic-ui-react'
 
 import { getChannels } from '../actions/channelsActions'
 import ExploreItem from '../components/ExploreItem'
+import Loader from '../components/Loader'
 
 class Explore extends React.Component {
   componentDidMount() {
@@ -15,7 +15,7 @@ class Explore extends React.Component {
     const { channels } = this.props
     if(_.isEmpty(channels)) {
       return (
-        <Loader active inline='centered'>Loading...</Loader>
+        <Loader/>
       )
     }
     return (

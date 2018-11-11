@@ -2,6 +2,7 @@ import React from 'react'
 
 import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
+import Loader from '../../../Loader'
 
 export default class VideoCardGridList extends React.Component {
 	getPlaylist(name, videos) {
@@ -9,10 +10,10 @@ export default class VideoCardGridList extends React.Component {
 			<div className='playlist-complete uk-margin-medium-bottom' key={name}>
 			   <div className='playlist-title title-deco title-deco-sm'>{name}</div>
 			   <div className='uk-grid'>
-			   	{videos.map(video => 
-			   		<VideoCardGrid 
-			   			video={video} 
-			   			key={video.id} 
+			   	{videos.map(video =>
+			   		<VideoCardGrid
+			   			video={video}
+			   			key={video.id}
 			   			playSong={this.props.playSong}
 			   			addToNowPlaying={this.props.addToNowPlaying}/>)}
 				</div>
@@ -30,9 +31,7 @@ export default class VideoCardGridList extends React.Component {
 	render() {
 		if(Object.keys(this.props.playlists).length === 0) {
 			return (
-				<div>
-					Loading...
-				</div>
+				<Loader/>
 			)
 		}
 		return (

@@ -26,10 +26,9 @@ const Root = ({ store }) => (
       	<div
           className={css`
             margin-left: 220px !important;
-            margin-top: 58px !important;
+            padding-top: 58px !important;
             padding-left: 40px;
             padding-right: 40px;
-            padding-top: 40px;
           `}>
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/explore' component={ Explore } />

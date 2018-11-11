@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
-import { Loader } from 'semantic-ui-react'
 
 import { getChannelSongs } from '../actions/channelsActions'
+import Loader from '../components/Loader'
 
 class Channel extends React.Component {
   state = {
@@ -32,7 +32,7 @@ class Channel extends React.Component {
     }
     if(_.isEmpty(songs)) {
       return (
-        <Loader active inline='centered'>Loading...</Loader>
+        <Loader/>
       )
     }
     return (
