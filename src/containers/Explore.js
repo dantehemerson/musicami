@@ -5,6 +5,7 @@ import _ from 'lodash'
 import { getChannels } from '../actions/channelsActions'
 import ExploreItem from '../components/ExploreItem'
 import Loader from '../components/Loader'
+import Wrapper from '../components/Wrapper'
 
 class Explore extends React.Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class Explore extends React.Component {
       )
     }
     return (
-      <div>
+      <Wrapper>
         {
           channels.map(channel =>
             <ExploreItem
@@ -27,7 +28,7 @@ class Explore extends React.Component {
               title={channel.playlist}/>
           )
         }
-      </div>
+      </Wrapper>
     )
   }
 }
