@@ -31,7 +31,7 @@ export default props => (
   <Wrapper {...props}>
     {
       props.to ?
-        <Link className='fjk3' to={ props.to }>{ props.title }<Icon name='chevron right'/></Link>
+        <Link className='fjk3' to={ props.to }>{ props.title }<Icon size='small' name='chevron right'/></Link>
       :
         <h3 className='fjk3'>{ props.title }</h3>
     }
