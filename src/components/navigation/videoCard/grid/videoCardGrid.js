@@ -34,7 +34,7 @@ export default class videoCardGrid extends React.Component {
                 border-top: none;
               }
               .menu {
-                left: -68px;
+                left: -61px;
                 color: #52525d;
                 border: 1px solid #d1d1d7 !important;
                 border-radius: 3px !important;
