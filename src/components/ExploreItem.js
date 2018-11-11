@@ -19,6 +19,9 @@ const ExploreItem = styled(Link)`
     color: white;
     font-size: 1rem;
     font-weight: 600;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
   }
 `
 
