@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
+import { css } from 'react-emotion'
 
 import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
@@ -9,7 +10,11 @@ import Title from '../../../TitleSection'
 export default class VideoCardGridList extends React.Component {
 	getPlaylist(name, videos) {
 		return (
-			<div key={name}>
+			<div
+        className={css`
+          padding-bottom: 35px;
+        `}
+        key={name}>
 			  <Title title={name} to={`/explore/${name}`}/>
 			  <Grid>
 			   	{
