@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
+import { List } from 'semantic-ui-react'
 
 import { getChannelSongs } from '../actions/channelsActions'
 import Loader from '../components/Loader'
+import ListItem from '../components/ListItem'
 
 class Channel extends React.Component {
   state = {
@@ -36,12 +38,14 @@ class Channel extends React.Component {
       )
     }
     return (
-      <div>
+      <List selection>
         {
           songs &&
-          songs.map(song => <li>{ song.title }</li>)
+          songs.map(song =>
+            <ListItem song={song}/>
+          )
         }
-      </div>
+      </List>
     )
   }
 }
