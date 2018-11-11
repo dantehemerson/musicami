@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled, { css } from 'react-emotion'
+import styled from 'react-emotion'
 
 const ExploreItem = styled(Link)`
   display: flex;

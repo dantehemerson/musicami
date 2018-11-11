@@ -2,20 +2,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getPlaylists } from '../actions/trendingActions'
 import _ from 'lodash'
+import { Loader } from 'semantic-ui-react'
 
 import ExploreItem from '../components/ExploreItem'
 
 class Explore extends React.Component {
   componentDidMount() {
-    this.props.getPlaylists(1)
+    this.props.getPlaylists(10)
   }
 
   render() {
     const { playlists } = this.props
     if(_.isEmpty(playlists)) {
-      return <h1>Loading...</h1>
+      return (
+        <Loader active inline='centered'>Loading...</Loader>
+      )
     }
-
     return (
       <div>
         {
