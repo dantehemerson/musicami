@@ -11,6 +11,9 @@ const ExploreItem = styled(Link)`
   border-radius: 3px;
   box-shadow: 0 1px 5px rgba(10,10,22,.25);
   background: url(${`${process.env.PUBLIC_URL}/static/images/channels/popular.png`});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   &:hover {
     text-decoration: none;
     opacity: .9;

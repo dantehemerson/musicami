@@ -11,6 +11,9 @@ import Wrapper from '../components/Wrapper'
 
 const Header = styled('div')`
   background: url(${props => props.image ? props.image : 'black' });
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 200px;
   display: flex;
   align-items: center;
