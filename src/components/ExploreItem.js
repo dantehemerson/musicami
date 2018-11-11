@@ -10,7 +10,7 @@ const ExploreItem = styled(Link)`
   border: 1px solid #d1d1d7;
   border-radius: 3px;
   box-shadow: 0 1px 5px rgba(10,10,22,.25);
-  background: url('/static/images/channels/popular.png');
+  background: url(${`${process.env.PUBLIC_URL}/static/images/channels/popular.png`});
   &:hover {
     text-decoration: none;
     opacity: .9;
