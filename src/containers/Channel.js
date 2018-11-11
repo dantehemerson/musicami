@@ -3,30 +3,33 @@ import { connect } from 'react-redux'
 import _ from 'lodash'
 import { Loader } from 'semantic-ui-react'
 
+import { getChannelSongs } from '../actions/channelsActions'
+
 class Channel extends React.Component {
   componentDidMount() {
-    console.log(this.props.match.params.channelId)
+    //console.log(this.props.match.params.channelId)
   }
 
   render() {
     return (
       <div>
         Instagram
+        <span onClick={ () => this.props.getChannelSongs(this.props.match.params.channelId)}>Get songs</span>
+        {
+          console.log(this.props)
+        }
       </div>
     )
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   channels: state.channels
-// })
+const mapStateToProps = (state) => ({
+  songs: state.songs
+})
 
-// const mapDispatchToProps = {
-//   getChannels
-// }
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Explore)
-export default Channel
+export default connect(
+  mapStateToProps,
+  {
+    getChannelSongs
+  }
+)(Channel)

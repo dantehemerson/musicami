@@ -1,9 +1,20 @@
 import { actionTypes } from '../actions/channelsActions'
 
-export const channelsReducer = (state = [], action) => {
+const initialState = {
+  data: [],
+  songs: {}
+}
+export const channelsReducer = (state = {}, action) => {
   switch(action.type) {
     case actionTypes.GET_CHANNELS:
-      return action.channels
+      return {
+        ...state,
+        data: action.channels
+      }
+    case actionTypes.GET_CHANNEL_SONGS:
+      console.log(action.songs)
+
+      return state
     default:
       return state
   }

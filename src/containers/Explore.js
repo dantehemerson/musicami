@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getChannels } from '../actions/channelsActions'
 import _ from 'lodash'
 import { Loader } from 'semantic-ui-react'
 
+import { getChannels } from '../actions/channelsActions'
 import ExploreItem from '../components/ExploreItem'
 
 class Explore extends React.Component {
@@ -33,7 +33,7 @@ class Explore extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  channels: state.channels
+  channels: state.channels.data
 })
 
 const mapDispatchToProps = {
