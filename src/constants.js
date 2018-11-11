@@ -10,3 +10,9 @@ export const keys = {
    DOWN_ARROW: 40,
    ENTER: 13
 }
+
+export const playlistData = {
+   'popular': {
+      color: 'blue'
+   }
+}
