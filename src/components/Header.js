@@ -25,12 +25,13 @@ class Header extends React.Component {
 
   handleSearch = (e) => {
     if(e.key === keys.ENTER) {
-      this.search(e.target.value)
+      this.search()
     }
   }
 
-  search = (value) => {
-    const query = value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
+  search = () => {
+    const searchElement = document.getElementById('search-input')
+    const query = searchElement.value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
     if(query.length === 0) return
     this.props.history.push('/search/' + query)
   }
