@@ -29,16 +29,11 @@ export default class VideoCardGridList extends React.Component {
 			  <Slider {...settings}>
 			   	{
             videos.map(video =>
-              <Grid.Column
+    			   	<VideoCardGrid
                 key={video.id}
-                mobile={13}
-                tablet={8}
-                computer={4}>
-    			   		<VideoCardGrid
-    			   			video={video}
-    			   			playSong={this.props.playSong}
-    			   			addToNowPlaying={this.props.addToNowPlaying}/>
-              </Grid.Column>
+    			   		video={video}
+    			   		playSong={this.props.playSong}
+    			   		addToNowPlaying={this.props.addToNowPlaying}/>
             )
           }
 				</Slider>

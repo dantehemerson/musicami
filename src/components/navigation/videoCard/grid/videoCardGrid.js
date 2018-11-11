@@ -23,7 +23,7 @@ export default class videoCardGrid extends React.Component {
 	render() {
 		const videoTitle = this.props.video.title
 		return (
-			<div className="uk-width-1-4@l uk-width-1-3@m uk-width-1-3@s uk-width-1-2 video-card-grid uk-margin-small-bottom">
+			<div>
 
 			  <Card
           className={css`
