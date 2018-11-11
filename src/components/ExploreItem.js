@@ -23,7 +23,7 @@ const ExploreItem = styled(Link)`
 `
 
 export default props => (
-  <ExploreItem to='/'>
+  <ExploreItem to={`/explore/${ props.title }`}>
     <h4>{ props.title }</h4>
   </ExploreItem>
 )
