@@ -15,6 +15,7 @@ import Channel from './containers/Channel'
 import Player from './containers/playerContainer'
 import Sidebar from './components/Sidebar'
 import NotFound from './containers/NotFound'
+import './styles'
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
