@@ -2,7 +2,7 @@ import React from 'react'
 import { List, Icon, Popup } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
-import CircleButton from './CircleButton'
+import CircleButton from '../CircleButton'
 
 const ListItem = styled(List.Item)`
   height: 52px;
