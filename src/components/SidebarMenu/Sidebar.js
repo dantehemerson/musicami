@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'react-emotion'
-import { Divider, Icon, Menu } from 'semantic-ui-react'
+import { Divider, Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 import Logo from '../Logo'

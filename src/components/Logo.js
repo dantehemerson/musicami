@@ -29,6 +29,7 @@ export default props => (
         width: 45px;
         height: 45px;
       `}
+      alt='Musicami'
       src={icon}/>
     <Title>Musicami</Title>
   </Logo>

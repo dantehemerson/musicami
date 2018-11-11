@@ -5,7 +5,7 @@ const initialState = {
   songs: {}
 }
 
-export const channelsReducer = (state = {}, action) => {
+export const channelsReducer = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.GET_CHANNELS:
       return {

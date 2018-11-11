@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'react-emotion'
+import { css } from 'react-emotion'
 import { Icon } from 'semantic-ui-react'
 
 export default props => (

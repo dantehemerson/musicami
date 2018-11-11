@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Icon, Dropdown, Reveal, Image } from 'semantic-ui-react'
-import styled, { css } from 'react-emotion'
+import { Card, Dropdown, Image } from 'semantic-ui-react'
+import { css } from 'react-emotion'
 
 import './static/css/videoCardGrid.css'
 import Button from '../../../CircleButton'
