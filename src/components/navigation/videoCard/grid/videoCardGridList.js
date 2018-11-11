@@ -1,4 +1,5 @@
 import React from 'react'
+import { Grid } from 'semantic-ui-react'
 
 import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
@@ -8,15 +9,23 @@ export default class VideoCardGridList extends React.Component {
 	getPlaylist(name, videos) {
 		return (
 			<div className='playlist-complete uk-margin-medium-bottom' key={name}>
-			   <div className='playlist-title title-deco title-deco-sm'>{name}</div>
-			   <div className='uk-grid'>
-			   	{videos.map(video =>
-			   		<VideoCardGrid
-			   			video={video}
-			   			key={video.id}
-			   			playSong={this.props.playSong}
-			   			addToNowPlaying={this.props.addToNowPlaying}/>)}
-				</div>
+			  <div className='playlist-title title-deco title-deco-sm'>{name}</div>
+			  <Grid centered>
+			   	{
+            videos.map(video =>
+              <Grid.Column
+                key={video.id}
+                mobile={13}
+                tablet={8}
+                computer={4}>
+    			   		<VideoCardGrid
+    			   			video={video}
+    			   			playSong={this.props.playSong}
+    			   			addToNowPlaying={this.props.addToNowPlaying}/>
+              </Grid.Column>
+            )
+          }
+				</Grid>
 			</div>
 		)
 	}
