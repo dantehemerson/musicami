@@ -16,6 +16,7 @@ import Player from './containers/playerContainer'
 //import Sidebar from './containers/sideBarContainer'
 import 'semantic-ui-css/semantic.min.css';
 import SidebarMenu from './components/SidebarMenu'
+import NotFound from './containers/NotFound'
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
@@ -29,10 +30,11 @@ const Root = ({ store }) => (
             padding-top: 58px !important;
           `}>
           <Switch>
-          <Route exact path='/' component={ NavigationHome } />
-          <Route exact path='/explore' component={ Explore } />
-          <Route exact path='/explore/:channelId' component={ Channel } />
-          <Route exact path='/search/:q' component={ NavigationSearch }/>
+            <Route exact path='/' component={ NavigationHome } />
+            <Route exact path='/explore' component={ Explore } />
+            <Route exact path='/explore/:channelId' component={ Channel } />
+            <Route exact path='/search/:q' component={ NavigationSearch }/>
+            <Route component={NotFound}/>
           </Switch>
           {/*
           <div className="sidebar-container">
