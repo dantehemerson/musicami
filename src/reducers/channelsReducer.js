@@ -4,6 +4,7 @@ const initialState = {
   data: [],
   songs: {}
 }
+
 export const channelsReducer = (state = {}, action) => {
   switch(action.type) {
     case actionTypes.GET_CHANNELS:
@@ -12,9 +13,13 @@ export const channelsReducer = (state = {}, action) => {
         data: action.channels
       }
     case actionTypes.GET_CHANNEL_SONGS:
-      console.log(action.songs)
-
-      return state
+      return {
+        ...state,
+        songs: {
+          ...state.songs,
+          ...action.songs
+        }
+      }
     default:
       return state
   }
