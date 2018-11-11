@@ -2,8 +2,6 @@ import React from 'react'
 import styled, { css } from 'react-emotion'
 import { Link } from 'react-router-dom'
 
-import icon from '../assets/images/logo.png'
-
 const Logo = styled(Link)`
   display: flex;
   align-items: center;
@@ -30,7 +28,7 @@ export default props => (
         height: 45px;
       `}
       alt='Musicami'
-      src={icon}/>
+      src={`${process.env.PUBLIC_URL}/static/images/logo.png`}/>
     <Title>Musicami</Title>
   </Logo>
 )
