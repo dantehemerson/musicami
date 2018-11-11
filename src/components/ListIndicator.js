@@ -1,8 +1,6 @@
 import React from 'react'
-import { List, Icon, Popup } from 'semantic-ui-react'
+import { List } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
-
-import CircleButton from './CircleButton'
 
 const ListItem = styled(List.Item)`
   height: 52px;
@@ -11,15 +9,7 @@ const ListItem = styled(List.Item)`
   border-radius: 4px !important;
   position: relative !important;
   margin: -1px 0 !important;
-  &:hover {
-    background-color: #efeff2 !important;
-    i.play.small.circular {
-      display: inherit !important;
-    }
-    .index {
-      display: none !important;
-    }
-  }
+  padding: .5em .5em !important;
   &:before {
     content: '';
     top: 0;
@@ -37,9 +27,7 @@ const Index = styled('div')`
   width: 32px;
   align-items: center;
   justify-content: center;
-  i.play.small.circular {
-    display: none !important;
-  }
+  color: #92929d;
 `
 
 const Favorite = styled('div')`
@@ -65,22 +53,13 @@ const Favorite = styled('div')`
 export default ({ song }) => (
   <ListItem>
     <Index>
-      <CircleButton
-        marginRight='0'
-        size='mini'/>
-      <span className='index'>{ song.index }</span>
+      <span className='index'>#</span>
     </Index>
     <Favorite>
-      <Popup
-        trigger={<Icon name='heart outline' />}
-        content='Add to Favorites'
-        position='top center'
-        inverted
-        size='mini'/>
     </Favorite>
     <span
       className={css`
-        color: #32323d;
+        color: #92929d;
         font-size: 14px;
         margin: 0;
         padding-left: 12px;
@@ -89,11 +68,11 @@ export default ({ song }) => (
         white-space: nowrap !important;
         overflow: hidden;
       `}>
-      { song.title }
+      TRACK
     </span>
     <span
       className={css`
-        color: #32323d;
+        color: #92929d;
         font-size: 14px;
         margin: 0;
         padding-left: 12px;
@@ -102,19 +81,20 @@ export default ({ song }) => (
         white-space: nowrap !important;
         overflow: hidden;
       `}>
-      { song.uploader }
+      ARTIST
     </span>
     <span
       className={css`
         font-size: 14px;
         margin: 0;
+        color: #92929d;
         padding-left: 12px;
         width: 60px;
         text-overflow: ellipsis;
         white-space: nowrap !important;
         overflow: hidden;
       `}>
-      { song.length }
+      L.
     </span>
   </ListItem>
 )
