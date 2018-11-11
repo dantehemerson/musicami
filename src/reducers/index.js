@@ -4,11 +4,13 @@ import { search } from './searchReducer'
 import { nowPlaying } from './nowPlayingReducer'
 import { player } from './playerReducer'
 import { trending } from './trendingReducer'
+import { channelsReducer } from './channelsReducer'
 
-export default combineReducers({ 
-	navigationHome, 
+export default combineReducers({
+	navigationHome,
 	search,
 	nowPlaying,
 	player,
-	trending
+	trending,
+  channels: channelsReducer
 })

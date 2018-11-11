@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getPlaylists } from '../actions/trendingActions'
+import { getChannels } from '../actions/channelsActions'
 import _ from 'lodash'
 import { Loader } from 'semantic-ui-react'
 
@@ -8,22 +8,24 @@ import ExploreItem from '../components/ExploreItem'
 
 class Explore extends React.Component {
   componentDidMount() {
-    this.props.getPlaylists(10)
+    this.props.getChannels()
   }
 
   render() {
-    const { playlists } = this.props
-    if(_.isEmpty(playlists)) {
+    const { channels } = this.props
+    if(_.isEmpty(channels)) {
       return (
         <Loader active inline='centered'>Loading...</Loader>
       )
     }
+    console.log(this.props)
     return (
       <div>
         {
-          Object.keys(playlists).map(playlist =>
+          channels.map(channel =>
             <ExploreItem
-              title={playlist}/>
+              key={channel.playlist}
+              title={channel.playlist}/>
           )
         }
       </div>
@@ -32,11 +34,11 @@ class Explore extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  playlists: state.trending.playlists
+  channels: state.channels
 })
 
 const mapDispatchToProps = {
-  getPlaylists
+  getChannels
 }
 
 export default connect(
