@@ -7,6 +7,7 @@ import { getChannels } from '../actions/channelsActions'
 import ExploreItem from '../components/ExploreItem'
 import Loader from '../components/Loader'
 import Wrapper from '../components/Wrapper'
+import Title from '../components/TitleSection'
 
 class Explore extends React.Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class Explore extends React.Component {
     }
     return (
       <Wrapper>
+        <Title title='All Channels' big/>
         <Grid>
           {
             channels.map(channel =>

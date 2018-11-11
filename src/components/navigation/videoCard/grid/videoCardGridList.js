@@ -4,13 +4,14 @@ import { Grid } from 'semantic-ui-react'
 import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
 import Loader from '../../../Loader'
+import Title from '../../../TitleSection'
 
 export default class VideoCardGridList extends React.Component {
 	getPlaylist(name, videos) {
 		return (
-			<div className='playlist-complete uk-margin-medium-bottom' key={name}>
-			  <div className='playlist-title title-deco title-deco-sm'>{name}</div>
-			  <Grid centered>
+			<div key={name}>
+			  <Title title={name} to={`/explore/${name}`}/>
+			  <Grid>
 			   	{
             videos.map(video =>
               <Grid.Column
