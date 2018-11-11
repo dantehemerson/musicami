@@ -1,11 +1,24 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import styled from 'react-emotion'
 import _ from 'lodash'
 
 import { getChannelSongs } from '../actions/channelsActions'
 import Loader from '../components/Loader'
 import List from '../components/List'
 import Wrapper from '../components/Wrapper'
+
+
+const Header = styled('div')`
+  background: url(${props => props.image ? props.image : 'black' });
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    color: white;
+  }
+`
 
 class Channel extends React.Component {
   state = {
@@ -40,9 +53,15 @@ class Channel extends React.Component {
       )
     }
     return (
-      <Wrapper>
-        <List songs={songs}/>
-      </Wrapper>
+      <div>
+        <Header
+          image={`${process.env.PUBLIC_URL}/static/images/channels/popular.png`}>
+          <h1>{ this.state.name }</h1>
+        </Header>
+        <Wrapper>
+          <List songs={songs}/>
+        </Wrapper>
+      </div>
     )
   }
 }
