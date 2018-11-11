@@ -8,7 +8,7 @@ export const keys = {
    UP_ARROW: 38,
    RIGHT_ARROW: 39,
    DOWN_ARROW: 40,
-   ENTER: 13
+   ENTER: 'Enter'
 }
 
 export const playlistData = {

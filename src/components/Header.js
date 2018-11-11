@@ -23,26 +23,15 @@ class Header extends React.Component {
     history: PropTypes.object.isRequired
   }
 
-  componentDidMount() {
-    let searchElement = document.getElementById('search-input')
-    if(searchElement) {
-      searchElement.addEventListener('keyup', event => {
-        event.preventDefault()
-        if(event.keyCode === keys.ENTER) {
-          this.search()
-        }
-      })
+  handleSearch = (e) => {
+    if(e.key === keys.ENTER) {
+      this.search(e.target.value)
     }
   }
 
-  search = () => {
-    const searchElement = document.getElementById('search-input')
-
-    const query = searchElement.value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
-    if(query.length === 0) {
-      return
-    }
-    searchElement.blur()
+  search = (value) => {
+    const query = value.replace(/^\s+|\s+$/g, '') // Trailing whitespaces
+    if(query.length === 0) return
     this.props.history.push('/search/' + query)
   }
 
@@ -57,7 +46,12 @@ class Header extends React.Component {
           `}
           id='search-input'
           size='small'
-          action={{ icon: 'search' }}
+          action={{
+            icon: 'search',
+            primary: true,
+            onClick: this.search
+          }}
+          onKeyPress={ this.handleSearch }
           placeholder='Search...'/>
       </Wrapper>
     )
