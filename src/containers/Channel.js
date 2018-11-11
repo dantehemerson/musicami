@@ -5,6 +5,7 @@ import _ from 'lodash'
 import { getChannelSongs } from '../actions/channelsActions'
 import Loader from '../components/Loader'
 import List from '../components/List'
+import Wrapper from '../components/Wrapper'
 
 class Channel extends React.Component {
   state = {
@@ -37,7 +38,9 @@ class Channel extends React.Component {
       )
     }
     return (
-      <List songs={songs}/>
+      <Wrapper>
+        <List songs={songs}/>
+      </Wrapper>
     )
   }
 }
