@@ -1,11 +1,21 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
 import { css } from 'react-emotion'
+import Slider from 'react-slick'
 
 import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
 import Loader from '../../../Loader'
 import Title from '../../../TitleSection'
+
+const settings = {
+  dots: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  arrows: false
+}
 
 export default class VideoCardGridList extends React.Component {
 	getPlaylist(name, videos) {
@@ -16,7 +26,7 @@ export default class VideoCardGridList extends React.Component {
         `}
         key={name}>
 			  <Title title={name} to={`/explore/${name}`}/>
-			  <Grid>
+			  <Slider {...settings}>
 			   	{
             videos.map(video =>
               <Grid.Column
@@ -31,7 +41,7 @@ export default class VideoCardGridList extends React.Component {
               </Grid.Column>
             )
           }
-				</Grid>
+				</Slider>
 			</div>
 		)
 	}
