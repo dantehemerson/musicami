@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, List } from 'semantic-ui-react'
+import { Image, List, Icon, Popup } from 'semantic-ui-react'
 import styled, { css } from 'react-emotion'
 
 import CircleButton from './CircleButton'
@@ -42,6 +42,26 @@ const Index = styled('div')`
   }
 `
 
+const Favorite = styled('div')`
+  display: flex;
+  height: 28px;
+  width: 36px;
+  padding-left: 6px;
+  align-items: center;
+  justify-content: center;
+  i.heart.icon {
+    margin: 0 !important;
+    padding: 11px !important;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: white;
+    }
+  }
+`
+
 export default ({ song }) => (
   <ListItem>
     <Index>
@@ -50,6 +70,14 @@ export default ({ song }) => (
         size='mini'/>
       <span className='index'>12</span>
     </Index>
+    <Favorite>
+      <Popup
+        trigger={<Icon name='heart outline' />}
+        content='Add to Favorites'
+        position='top center'
+        inverted
+        size='mini'/>
+    </Favorite>
     { song.title }
   </ListItem>
 )
