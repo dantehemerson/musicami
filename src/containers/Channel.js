@@ -30,6 +30,11 @@ class Channel extends React.Component {
     if(this.state.name && this.props.songs) {
       songs = this.props.songs[this.state.name]
     }
+    if(_.isEmpty(songs)) {
+      return (
+        <Loader active inline='centered'>Loading...</Loader>
+      )
+    }
     return (
       <div>
         {

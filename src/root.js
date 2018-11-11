@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { Button, Icon, Image, Menu, Segment, Sidebar as SidebarSem } from 'semantic-ui-react'
 import { css } from 'react-emotion'
 
 import './static/css/root.css'
@@ -14,7 +13,7 @@ import NavigationSearch from './containers/navigation/navigationSearchContainer'
 import Explore from './containers/Explore'
 import Channel from './containers/Channel'
 import Player from './containers/playerContainer'
-import Sidebar from './containers/sideBarContainer'
+//import Sidebar from './containers/sideBarContainer'
 import 'semantic-ui-css/semantic.min.css';
 import SidebarMenu from './components/SidebarMenu'
 
