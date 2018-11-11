@@ -4,8 +4,8 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
 import Root from './root'
-import registerServiceWorker from './registerServiceWorker'
 import reducer from './reducers'
+import registerServiceWorker from './registerServiceWorker'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
