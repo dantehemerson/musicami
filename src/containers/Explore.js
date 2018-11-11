@@ -17,7 +17,9 @@ class Explore extends React.Component {
     const { channels } = this.props
     if(_.isEmpty(channels)) {
       return (
-        <Loader/>
+        <Wrapper>
+          <Loader/>
+        </Wrapper>
       )
     }
     return (

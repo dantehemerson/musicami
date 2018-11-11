@@ -6,7 +6,7 @@ const ExploreItem = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 75px;
+  height: 85px;
   border: 1px solid #d1d1d7;
   border-radius: 3px;
   box-shadow: 0 1px 5px rgba(10,10,22,.25);

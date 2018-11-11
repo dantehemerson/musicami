@@ -34,7 +34,9 @@ class Channel extends React.Component {
     }
     if(_.isEmpty(songs)) {
       return (
-        <Loader/>
+        <Wrapper>
+          <Loader/>
+        </Wrapper>
       )
     }
     return (

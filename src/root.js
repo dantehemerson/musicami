@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { css } from 'react-emotion'
 
 import './static/css/root.css'
@@ -28,10 +28,12 @@ const Root = ({ store }) => (
             margin-left: 220px !important;
             padding-top: 58px !important;
           `}>
+          <Switch>
           <Route exact path='/' component={ NavigationHome } />
           <Route exact path='/explore' component={ Explore } />
           <Route exact path='/explore/:channelId' component={ Channel } />
           <Route exact path='/search/:q' component={ NavigationSearch }/>
+          </Switch>
           {/*
           <div className="sidebar-container">
             <Sidebar />
