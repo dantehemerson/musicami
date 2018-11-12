@@ -56,15 +56,23 @@ export default class VideoCardGridList extends React.Component {
         <div
           className={css`
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             padding: 30px 0;
+            position: relative;
             align-items: center;
           `}>
 			    <Title title={name} to={`/explore/${name}`}/>
-          <SliderButtons
-            next={this.handleNext}
-            previous={this.handlePrevious}
-            id={id}/>
+          <div
+            className={css`
+               position: absolute;
+               top: 22px;
+               right: 0;
+            `}>
+            <SliderButtons
+              next={this.handleNext}
+              previous={this.handlePrevious}
+              id={id}/>
+          </div>
         </div>
 			  <Slider
           className={css`

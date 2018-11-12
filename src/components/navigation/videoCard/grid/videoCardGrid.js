@@ -61,12 +61,13 @@ export default class videoCardGrid extends React.Component {
               }
             `}>
             <Image
-            className={css`
-              object-fit: none !important;
-              border-radius: 4px !important;
-            `}
-            src={this.props.video.thumb}
-            alt={videoTitle}/>
+              className={css`
+                object-fit: none !important;
+                border-radius: 4px !important;
+                width: 100%;
+              `}
+              src={this.props.video.thumb}
+              alt={videoTitle}/>
             <div
               className={css`
                 position: absolute;
