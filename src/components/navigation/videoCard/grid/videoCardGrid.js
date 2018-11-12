@@ -24,7 +24,6 @@ export default class videoCardGrid extends React.Component {
 		const videoTitle = this.props.video.title
 		return (
 			<div>
-
 			  <Card
           className={css`
             &&& {

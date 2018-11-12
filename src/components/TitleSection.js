@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 const Wrapper = styled('div')`
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
   .fjk3 {
     color: #32323d;
     font-size: ${props => props.big ? '30px' : 'large'};

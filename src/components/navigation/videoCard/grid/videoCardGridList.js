@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid } from 'semantic-ui-react'
 import { css } from 'react-emotion'
 import Slider from 'react-slick'
 
@@ -7,6 +6,7 @@ import VideoCardGrid from './videoCardGrid'
 import './static/css/videoCardGrid.css'
 import Loader from '../../../Loader'
 import Title from '../../../TitleSection'
+import SliderButtons from '../../../SliderButtons'
 
 const settings = {
   dots: false,
@@ -25,7 +25,15 @@ export default class VideoCardGridList extends React.Component {
           padding-bottom: 35px;
         `}
         key={name}>
-			  <Title title={name} to={`/explore/${name}`}/>
+        <div
+          className={css`
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;
+          `}>
+			    <Title title={name} to={`/explore/${name}`}/>
+          <SliderButtons/>
+        </div>
 			  <Slider {...settings}>
 			   	{
             videos.map(video =>
