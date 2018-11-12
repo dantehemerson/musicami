@@ -18,7 +18,18 @@ const settings = {
 }
 
 export default class VideoCardGridList extends React.Component {
-	getPlaylist(name, videos) {
+  handleNext = () => {
+    console.log('Next')
+    this.slider.slickNext()
+  }
+
+  handlePrevious = () => {
+    console.log('Previous')
+    this.slider.slickPrev()
+  }
+
+	getPlaylist = (name, videos) => {
+    console.log(this.slider)
 		return (
 			<div
         className={css`
@@ -30,11 +41,14 @@ export default class VideoCardGridList extends React.Component {
             display: flex;
             justify-content: space-between;
             padding: 30px 0;
+            align-items: center;
           `}>
 			    <Title title={name} to={`/explore/${name}`}/>
-          <SliderButtons/>
+          <SliderButtons
+            next={this.handleNext}
+            previous={this.handlePrevious}/>
         </div>
-			  <Slider {...settings}>
+			  <Slider ref={c => (this.slider = c)} {...settings}>
 			   	{
             videos.map(video =>
     			   	<VideoCardGrid
@@ -49,7 +63,7 @@ export default class VideoCardGridList extends React.Component {
 		)
 	}
 
-	getPlaylists() {
+	getPlaylists = () => {
 		let keys = Object.keys(this.props.playlists)
 		return keys.map(key => {
 			return this.getPlaylist(key, this.props.playlists[key])
