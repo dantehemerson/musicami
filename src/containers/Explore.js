@@ -2,12 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import _ from 'lodash'
 import { Grid } from 'semantic-ui-react'
+import styled from 'react-emotion'
 
 import { getChannels } from '../actions/channelsActions'
 import ExploreItem from '../components/ExploreItem'
 import Loader from '../components/Loader'
 import Wrapper from '../components/Wrapper'
-import Title from '../components/TitleSection'
+
+const Title = styled('h2')`
+  font-size: 2rem;
+  font-weight: 400;
+  padding-bottom: 10px;
+  color: #32323d;
+`
 
 class Explore extends React.Component {
   componentDidMount() {
@@ -25,7 +32,7 @@ class Explore extends React.Component {
     }
     return (
       <Wrapper>
-        <Title title='All Channels' big/>
+        <Title>All Channels</Title>
         <Grid>
           {
             channels.map(channel =>

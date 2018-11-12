@@ -20,7 +20,6 @@ const ExploreItem = styled(Link)`
   }
   h4 {
     color: white;
-    font-size: 1rem;
     font-weight: 600;
     padding-left: 6px;
     padding-right: 6px;
