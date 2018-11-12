@@ -43,7 +43,16 @@ export default class VideoCardGridList extends React.Component {
             previous={this.handlePrevious}
             id={id}/>
         </div>
-			  <Slider ref={s => (this[`slider${id}`] = s)} {...settings}>
+			  <Slider
+          className={css`
+            overflow: hidden;
+            .slick-list {
+              width: calc(100% + 24px);
+              left: -12px;
+            }
+          `}
+          ref={s => (this[`slider${id}`] = s)}
+          {...settings}>
 			   	{
             videos.map(video =>
     			   	<VideoCardGrid

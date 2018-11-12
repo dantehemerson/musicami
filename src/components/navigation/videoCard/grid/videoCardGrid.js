@@ -23,12 +23,13 @@ export default class videoCardGrid extends React.Component {
 	render() {
 		const videoTitle = this.props.video.title
 		return (
-			<div>
-			  <Card
+			<Card
           className={css`
             &&& {
               box-shadow: 0 0 0 gray !important;
               padding-bottom: 26px;
+              padding-left: 12px;
+              padding-right: 12px;
               .content {
                 padding: .8em 0;
                 border-top: none;
@@ -141,9 +142,7 @@ export default class videoCardGrid extends React.Component {
                 color: #72727d !important;
               `}>{this.props.video.views} listens</Card.Description>
 			    </Card.Content>
-			  </Card>
-
-			</div>
+			</Card>
 		)
 	}
 }
