@@ -27,15 +27,26 @@ export default props => (
         width: 100% !important;
         margin: 0 !important;
         padding: 15px;
+        a.item i.icon {
+          float: left !important;
+          margin: 0 .5em 0 0 !important;
+        }
       `}>
       <Menu.Item
         as={Link}
+        to='/search'
+        icon='search'
+        name='SEARCH'/>
+      <Menu.Item
+        as={Link}
         to='/'
-        name='Home'/>
+        icon='home'
+        name='HOME'/>
       <Menu.Item
         as={Link}
         to='/explore'
-        name='Explore'/>
+        icon='internet explorer'
+        name='EXPLORE'/>
       <Divider inverted />
       <Menu.Item
         as={Link}
