@@ -29,6 +29,7 @@ export default class videoCardGrid extends React.Component {
           className={css`
             &&& {
               box-shadow: 0 0 0 gray !important;
+              padding-bottom: 26px;
               .content {
                 padding: .8em 0;
                 border-top: none;
