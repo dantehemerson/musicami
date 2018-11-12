@@ -50,7 +50,7 @@ export default props => (
       <Divider inverted />
       <Menu.Item
         as={Link}
-        to='/profile/id'
+        to='/profile/id/loved'
         icon='music'
         name='My Music'/>
       <Menu.Item
