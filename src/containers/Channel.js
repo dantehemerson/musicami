@@ -43,7 +43,6 @@ class Channel extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     let songs = []
     if(this.state.name && this.props.songs) {
       songs = this.props.songs[this.state.name]

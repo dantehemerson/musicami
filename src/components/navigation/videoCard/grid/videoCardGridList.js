@@ -14,7 +14,30 @@ const settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
-  arrows: false
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 1176,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      }
+    },
+    {
+      breakpoint: 920,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 }
 
 export default class VideoCardGridList extends React.Component {
