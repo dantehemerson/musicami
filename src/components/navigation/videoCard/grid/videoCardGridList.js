@@ -29,9 +29,6 @@ export default class VideoCardGridList extends React.Component {
 	getPlaylist = (name, videos, id) => {
 		return (
 			<div
-        className={css`
-          padding-bottom: 35px;
-        `}
         key={name}>
         <div
           className={css`
