@@ -28,10 +28,10 @@ const Button = styled('div')`
 
 export default props => (
   <Wrapper>
-    <Button onClick={props.previous}>
+    <Button onClick={ () => props.previous(props.id)}>
       <Icon name='chevron left'/>
     </Button>
-    <Button right onClick={props.next}>
+    <Button right onClick={ () => props.next(props.id)}>
       <Icon name='chevron right' />
     </Button>
   </Wrapper>
