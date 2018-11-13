@@ -57,12 +57,7 @@ getPlaylistSongs('Popular', 3)
   const data = {
     playlists: res
   }
-  // console.log(data.playlists.Popular)
-  // const normalizedData = normalize(data.playlists.Popular, [songSchema])
-  // console.log(normalizedData)
-
-  console.log(data.playlists)
-  const normalizedData = normalize(data.playlists, playlistSchema)
+  console.log(data.playlists.Popular)
+  const normalizedData = normalize(data.playlists.Popular, [songSchema])
   console.log(normalizedData)
-
 })
