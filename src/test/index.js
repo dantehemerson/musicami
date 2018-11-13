@@ -48,9 +48,7 @@ const songSchema = new schema.Entity('songs', {}, {
   }
 })
 
-const playlistSchema = new schema.Entity('playlists', {
-  songs: new schema.Array(songSchema)
-})
+const playlistSchema = new schema.Values(songSchema)
 
 
 const playlists = {
@@ -62,8 +60,12 @@ getPlaylistSongs('Popular', 3)
   const data = {
     playlists: res
   }
-  console.log(data.playlists.Popular)
-  const normalizedData = normalize(data.playlists.Popular, [songSchema])
+  // console.log(data.playlists.Popular)
+  // const normalizedData = normalize(data.playlists.Popular, [songSchema])
+  // console.log(normalizedData)
+
+  console.log(data.playlists)
+  const normalizedData = normalize(data.playlists, playlistSchema)
   console.log(normalizedData)
 
 })
