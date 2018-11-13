@@ -31,6 +31,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "lodash": "^4.17.10",
+    "normalizr": "^3.3.0",
     "object-assign": "4.1.1",
     "plyr": "^2.0.18",
     "postcss-flexbugs-fixes": "3.2.0",
