@@ -17,6 +17,8 @@ import Sidebar from './components/Sidebar'
 import NotFound from './containers/NotFound'
 import './styles'
 
+import './test'
+
 const Root = ({ store }) => (
 	<Provider store={ store }>
 		<BrowserRouter basename="/musicami">

@@ -36,9 +36,34 @@ const getPlaylistSongs = (playlists, count) => {
   })
 }
 
+
+// Playlists
+const songSchema = new schema.Entity('songs', {}, {
+  processStrategy: (value, parent, key) => {
+    delete value.description
+    return {
+      ...value,
+      favorite: false
+    }
+  }
+})
+
+const playlistSchema = new schema.Entity('playlists', {
+  songs: new schema.Array(songSchema)
+})
+
+
+const playlists = {
+  playlists: [ playlistSchema ]
+}
+
 getPlaylistSongs('Popular', 3)
-.then(data => {
-
-
+.then(res => {
+  const data = {
+    playlists: res
+  }
+  console.log(data.playlists.Popular)
+  const normalizedData = normalize(data.playlists.Popular, [songSchema])
+  console.log(normalizedData)
 
 })
