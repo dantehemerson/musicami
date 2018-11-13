@@ -48,9 +48,6 @@ const songSchema = new schema.Entity('songs', {}, {
   }
 })
 
-const playlistSchema = new schema.Values(songSchema)
-
-
 const playlists = {
   playlists: [ playlistSchema ]
 }
