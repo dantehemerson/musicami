@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -20,7 +20,7 @@ import './styles'
 const Root = ({ store }) => (
 	<Provider store={ store }>
 		<BrowserRouter basename="/musicami">
-      <div>
+      <Fragment>
         <Header/>
         <Sidebar/>
       	<div
@@ -39,7 +39,7 @@ const Root = ({ store }) => (
   			<div className="page-bottom">
           <Player/>
         </div>
-      </div>
+      </Fragment>
 		</BrowserRouter>
 	</Provider>
 )
