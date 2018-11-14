@@ -33,6 +33,7 @@ const Root = ({ store }) => (
             <Route exact path='/explore' component={ Explore } />
             <Route exact path='/explore/:channelId' component={ Channel } />
             <Route exact path='/search/:q' component={ NavigationSearch }/>
+            <Route exact path='/issue' component={() => window.location.assign('https://github.com/dantehemerson/musicami/issues')}/>
             <Route component={NotFound}/>
           </Switch>
         </div>
