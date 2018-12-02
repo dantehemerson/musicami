@@ -1,5 +1,5 @@
 import React from 'react'
-import { hydrate, render } from 'react-dom'
+import { render } from 'react-dom'
 import { createStore, compose, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
@@ -18,11 +18,6 @@ const store = createStore(
 
 const rootElement = document.getElementById('root')
 const app = <Root store={ store } />
-
-if(rootElement.hasChildNodes()) {
-  render(app, rootElement)
-} else {
-  hydrate(app, rootElement)
-}
+render(app, rootElement)
 
 registerServiceWorker()
