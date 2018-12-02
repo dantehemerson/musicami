@@ -2,7 +2,7 @@
   "name": "musicami",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dantehemerson.github.io/musicami",
+  "homepage": "https://musicami.netlify.com",
   "dependencies": {
     "add": "^2.0.6",
     "autoprefixer": "7.1.6",
@@ -65,9 +65,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "deploy": "hash=`git rev-parse HEAD` && yarn build && gh-pages -b gh-pages -d build -m \"Build for $hash\"",
-    "deploy-push-only": "hash=`git rev-parse HEAD` && gh-pages -b gh-pages -d build -m \"Build for $hash\""
+    "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -112,7 +110,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "gh-pages": "^1.2.0",
     "node-fetch": "^2.2.1"
   }
 }

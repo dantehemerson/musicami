@@ -82,7 +82,7 @@ export default class Player extends React.Component {
 		})
 
 		let nextButton = document.getElementById('next-btn')
-		if(nextButton) {			
+		if(nextButton) {
 			nextButton.onclick = e => {
 				this.props.playNext()
 			}
@@ -132,7 +132,7 @@ export default class Player extends React.Component {
 				        searchElement.focus()
 				      }
 				      e.preventDefault()
-				      break;		      
+				      break;
 			    	default:
 			      	return
 			    }
@@ -140,7 +140,7 @@ export default class Player extends React.Component {
 	}
 
 
-	componentWillReceiveProps(newProps) {		
+	componentWillReceiveProps(newProps) {
 		if(!this.props.currentSong || this.props.currentSong.id !== newProps.currentSong.id) {
 			// A new song is loaded
 			api.fetchStreamURL(newProps.currentSong.stream_url)
@@ -150,13 +150,13 @@ export default class Player extends React.Component {
 				})
 			this.props.getSuggestions(newProps.currentSong.suggest_url)
 			this.props.playedNext(newProps.currentSong)
-		}		
+		}
 	}
 
 	render() {
 		return (
 			<div className="player-wrapper" style={{display: this.state.streamURL ? 'flex' : 'none'}}>
-				<div className="player-meta">			
+				<div className="player-meta">
 				  <div className="player-album-art uk-margin-right">
 				    <img className="" src={this.props.currentSong && this.props.currentSong.thumb} alt="Album Art"/>
 				  </div>
@@ -166,10 +166,10 @@ export default class Player extends React.Component {
 				  </div>
 				</div>
 				<div className="player">
-					<audio 
-						id='audio-player' 
+					<audio
+						id='audio-player'
 						ref={ref => this.audioElement = ref}
-						src={this.state.streamURL} 
+						src={this.state.streamURL}
 						autoPlay={true}
 						controls={true}
 						preload='auto'>

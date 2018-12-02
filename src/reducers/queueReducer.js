@@ -6,7 +6,7 @@ const initialState = {
 
 export const queueReducer = (state = initialState, action) => {
   switch(action.type) {
-    case actionTypes.ADD:
+    case actionTypes.ADD_SONGS:
       return {
         ...state,
         songs: [
