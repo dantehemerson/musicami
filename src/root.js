@@ -19,7 +19,7 @@ import './styles'
 
 const Root = ({ store }) => (
 	<Provider store={ store }>
-		<BrowserRouter basename="/musicami">
+		<BrowserRouter>
       <Fragment>
         <Header/>
         <Sidebar/>
