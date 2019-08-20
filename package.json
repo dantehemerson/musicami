@@ -34,7 +34,7 @@
     "normalizr": "^3.3.0",
     "object-assign": "4.1.1",
     "plyr": "^2.0.18",
-    "postcss-flexbugs-fixes": "3.2.0",
+    "postcss-flexbugs-fixes": "3.3.1",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
     "prop-types": "^15.6.2",
