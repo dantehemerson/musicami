@@ -52,7 +52,7 @@
     "resolve": "1.6.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.83.0",
-    "style-loader": "0.19.0",
+    "style-loader": "0.23.1",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
     "url-search-params-polyfill": "^5.0.0",
