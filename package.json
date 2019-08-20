@@ -5,7 +5,7 @@
   "homepage": "https://musicami.netlify.com",
   "dependencies": {
     "add": "^2.0.6",
-    "autoprefixer": "7.1.6",
+    "autoprefixer": "7.2.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
